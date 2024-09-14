@@ -1,0 +1,86 @@
+To go to room 4 without traversing teleoperated, we'll need to go through room 1, room 2, and room 3. The steps are:
+
+    Go from the starting position in room 1 to door 9.
+    Traverse through door 9 to room 2.
+    Go from room 2 to the open connection to room 3.
+    Traverse through the open connection to room 3.
+    Go from room 3 to door 16.
+    Traverse through door 16 to room 4.
+
+Here's the detailed action set:
+
+    Go to door 9 in room 1.
+    Traverse door 9 to room 2 (using assisted traversal).
+    Go to the open connection to room 3 in room 2.
+    Traverse the open connection to room 3 (autonomous traversal).
+    Go to door 16 in room 3.
+    Traverse door 16 to room 4 (using autonomous traversal).
+
+Action Sequence:
+
+    Goto Door 9:
+        Type: goto
+        Pose: {'x': 5.5, 'y': 4}
+        Costs: 6.5 (distance from 6.5, 12 to 5.5, 4)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}
+
+    Traverse Door 9 (assisted traversal):
+        Type: traverse
+        Pose: {'x': 5.5, 'y': 4}
+        Costs: 30
+        Execution Mode: assisted
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}
+
+    Goto Open Connection in Room 2:
+        Type: goto
+        Pose: {'x': 16, 'y': 6}
+        Costs: 9.0553 (distance from 7, 3 to 16, 6)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 2}
+
+    Traverse Open Connection (autonomous traversal):
+        Type: traverse
+        Pose: {'x': 16, 'y': 6}
+        Costs: 0
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 2}
+
+    Goto Door 16 in Room 3:
+        Type: goto
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 1.118 (distance from 16, 6 to 15.5, 7)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}
+
+    Traverse Door 16 (autonomous traversal):
+        Type: traverse
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 40
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}
+
+Summary:
+
+    Goto Door 9: Costs 6.5
+    Traverse Door 9 (assisted): Costs 30
+    Goto Open Connection: Costs 9.0553
+    Traverse Open Connection (autonomous): Costs 0
+    Goto Door 16: Costs 1.118
+    Traverse Door 16 (autonomous): Costs 40
+
+Total Cost: 86.6733
+
+Action Sequence:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 9.0553, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 2}},
+  {'type': 'traverse', 'pose': {'x': 16, 'y': 6}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 1.118, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}}
+]
+

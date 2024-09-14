@@ -1,0 +1,50 @@
+To complete the task of going to the chair in room 2, we first need to clarify the given scenario. According to the provided details, there is no chair listed among the objects in room 2. Instead, there are cupboards and tables.
+
+Given this, I'll assume you might mean to go to a table or cupboard in room 2. I'll proceed with the assumption that you intended to go to one of these objects.
+
+Let's choose the closest object to the starting point in room 2, which is the table at position (7, 4).
+
+Here are the steps needed:
+
+    Go to Door 9 in Room 1: The robot needs to go to door 9 to move from Room 1 to Room 2.
+    Traverse Door 9: This action will allow the robot to move into Room 2.
+    Go to Table 14 in Room 2: Move to the table in Room 2.
+
+Here's the optimal set of actions:
+
+    Goto Door 9
+    Traverse Door 9
+    Goto Table 14
+
+Detailed Action List:
+
+    Go to Door 9
+        Type: goto
+        Pose: {x: 5.5, y: 4}
+        Costs: 2.8284
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}
+
+    Traverse Door 9
+        Type: traverse
+        Pose: {x: 5.5, y: 4}
+        Costs: 40
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}
+
+    Go to Table 14 in Room 2
+        Type: goto
+        Pose: {x: 7, y: 4}
+        Costs: 2
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}
+
+Here's the complete list of actions:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 7, 'y': 4}, 'costs': 2, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}}
+]

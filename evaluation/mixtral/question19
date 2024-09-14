@@ -1,0 +1,10 @@
+clean table 19
+
+
+ To clean table 19, the robot needs to go to room 3 and then inspect table 19. Here is the set of actions with the lowest combined cost:
+
+[{'type': 'goto', 'pose': {'x': 6.5, 'y': 6.5}, 'costs': 0, 'execution\_mode': 'autonomous', 'entity': {'entity\_type': 'open\_connection', 'entity\_super\_type': 'connection', 'id': 0, 'parent\_id': 1}},
+{'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 15.6205, 'execution\_mode': 'autonomous', 'entity': {'entity\_type': 'room', 'entity\_super\_type': 'room', 'id': 3, 'parent\_id': 3}},
+{'type': 'inspect', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 30, 'execution\_mode': 'assisted', 'entity': {'entity\_type': 'table', 'entity\_super\_type': 'object', 'id': 19, 'parent\_id': 3}}]
+
+The first action is to traverse the open connection from room 1 to room 3 with a cost of 0. The second action is to go to the center of room 3 with a cost of 15.6205. The third action is to inspect table 19 with a cost of 30. The total cost of this set of actions is 45.6205.

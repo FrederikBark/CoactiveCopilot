@@ -1,0 +1,19 @@
+
+go to room 2 and search table 12
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'room', 'super_type': 'room', 'id': 2}},
+  {'task': 'affordance', 'entity': {'type': 'table', 'super_type': 'object', 'id': 12}, 'type': 'search'},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+Copilot: I'm sorry, but there is no matching {'type': 'table', 'super_type': 'object', 'id': 12} known to me. What should I do?'

@@ -1,0 +1,17 @@
+
+communicate with shelf 4
+
+
+
+tasks: [
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+Copilot: I'm sorry, but I don't know how to communicate a shelf. I can only ['inspect', 'search', 'goto', 'measure_hazard'] with shelf. Do you want to pick another affordance, pick another entity, change this step completely, or replan completely?

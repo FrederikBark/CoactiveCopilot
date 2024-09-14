@@ -1,0 +1,18 @@
+
+go to room 3, but don’t use open connection 0
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'room', 'super_type': 'room', 'id': 3}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+Copilot: I'm sorry, but I don't know how to open a connection. I can only ['goto', 'traverse'] with connection. Do you want to pick another affordance, pick another entity, change this step completely, or replan completely?

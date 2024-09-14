@@ -1,0 +1,9 @@
+measure hazards on table 2, then measure hazards on table 19
+
+
+ [
+{'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 5.3852, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+{'type': 'measure_hazard', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 40, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 25.456, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+{'type': 'measure_hazard', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 40, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+]

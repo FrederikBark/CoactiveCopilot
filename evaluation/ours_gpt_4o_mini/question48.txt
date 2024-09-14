@@ -1,0 +1,21 @@
+
+go to the chair in room 2
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'table', 'super_type': 'object', 'location': 'room 2', 'id': 'variable'}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 5.0}, 'costs': 7.071067810058594, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 1, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 3.0}, 'costs': 20.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 1, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 7.0, 'y': 4.0}, 'costs': 1.8027756214141846, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 7.0, 'y': 4.0}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}},
+]
+

@@ -1,0 +1,17 @@
+measure hazards on table 2
+
+
+To measure hazards on table 2, the robot must first go to the table's position. The optimal set of actions is as follows:
+
+1. **Go to table 2** (located at 0.5, 10.5).
+2. **Measure hazards on table 2**.
+
+Here are the actions:
+
+Result:
+```json
+[
+    {'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+    {'type': 'measure_hazard', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}}
+]
+```

@@ -1,0 +1,13 @@
+go to room 2 and search table 12
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 4.4721, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 7, 'y': 4}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 12, 'parent_id': 2}},
+{'type': 'search', 'pose': {'x': 7, 'y': 4}, 'costs': 70, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 12, 'parent_id': 2}}]
+
+Explanation:
+1. Go to door 9 to reach room 2 from room 1. The cost for assisted mode is 30, which is lower than the cost for autonomous mode (40) and teleoperated mode (20).
+2. Traverse door 9 to enter room 2.
+3. Go to table 12 in room 2. The cost for autonomous mode is 3.6056, which is lower than the cost for teleoperated mode (6.3246) and assisted mode (5.0990).
+4. Search table 12 in room 2. The cost for teleoperated mode is 70, which is the lowest cost for this action.

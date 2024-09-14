@@ -1,0 +1,54 @@
+communicate with the victim in room 3
+
+
+ [{'type': 'goto',
+  'pose': {'x': 6.5, 'y': 9},
+  'costs': 0,
+  'execution_mode': 'autonomous',
+  'entity': {'entity_type': 'room',
+             'entity_super_type': 'room',
+             'id': 1,
+             'parent_id': 1}},
+ 
+ {'type': 'traverse',
+  'pose': {'x': 6.5, 'y': 9},
+  'costs': 40,
+  'execution_mode': 'autonomous',
+  'entity': {'entity_type': 'open_connection',
+             'entity_super_type': 'connection',
+             'id': 0,
+             'parent_id': 1}},
+ 
+ {'type': 'goto',
+  'pose': {'x': 16, 'y': 6},
+  'costs': 15.6205,
+  'execution_mode': 'autonomous',
+  'entity': {'entity_type': 'room',
+             'entity_super_type': 'room',
+             'id': 3,
+             'parent_id': 3}},
+ 
+ {'type': 'goto',
+  'pose': {'x': 19.5, 'y': 12.5},
+  'costs': 9.4868,
+  'execution_mode': 'autonomous',
+  'entity': {'entity_type': 'victim',
+             'entity_super_type': 'object',
+             'id': 20,
+             'parent_id': 3}},
+ 
+ {'type': 'communicate',
+  'pose': {'x': 19.5, 'y': 12.5},
+  'costs': 60,
+  'execution_mode': 'teleop',
+  'entity': {'entity_type': 'victim',
+             'entity_super_type': 'object',
+             'id': 20,
+             'parent_id': 3}}]
+
+Explanation:
+
+1. The robot goes from its starting position to the center of room 1, which is the nearest room connection.
+2. The robot traverses the open connection to room 3.
+3. The robot goes to the center of room 3, which is the nearest position to the victim.
+4. The robot goes to the victim and communicates with them.

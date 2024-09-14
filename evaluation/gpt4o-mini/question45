@@ -1,0 +1,4 @@
+search table 14 without traversing doors
+
+
+RESULT: ERROR, There is no valid path to reach table 14 without traversing doors.

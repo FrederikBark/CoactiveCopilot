@@ -1,0 +1,60 @@
+To communicate with the victim in room 3, follow these steps:
+
+    Go to the door or connection leading to room 3 from room 1. Since room 3 is connected to room 1 via an open connection, we'll need to traverse it. The open connection is at position 9, 6.5. We will go to this position.
+
+    Traverse the open connection to room 3. The traversal of an open connection is cost-free for all modes, but we will prefer autonomous mode for efficiency.
+
+    Go to the center of room 3. After traversing the connection, we need to move to the center of room 3 to find the victim.
+
+    Go to the victim in room 3. The victim is located at 19.5, 12.5 in room 3.
+
+    Communicate with the victim. Communication with the victim can only be performed in teleop mode.
+
+Here’s the optimal set of actions:
+
+    Goto open connection:
+        Type: goto
+        Pose: {x: 9, y: 6.5}
+        Costs: 3.6056 (distance from {6.5, 12} to {9, 6.5})
+        Execution Mode: autonomous
+        Entity: {entity_type: 'connection', entity_super_type: 'object', id: 0, parent_id: 1}
+
+    Traverse open connection:
+        Type: traverse
+        Pose: {x: 9, y: 6.5}
+        Costs: 0 (traversal cost is free for all modes)
+        Execution Mode: autonomous
+        Entity: {entity_type: 'connection', entity_super_type: 'object', id: 0, parent_id: 3}
+
+    Goto center of room 3:
+        Type: goto
+        Pose: {x: 16, y: 6}
+        Costs: 7.8102 (distance from {9, 6.5} to {16, 6})
+        Execution Mode: autonomous
+        Entity: {entity_type: 'room', entity_super_type: 'room', id: 3, parent_id: 3}
+
+    Goto victim 20:
+        Type: goto
+        Pose: {x: 19.5, y: 12.5}
+        Costs: 6.8076 (distance from {16, 6} to {19.5, 12.5})
+        Execution Mode: autonomous
+        Entity: {entity_type: 'victim', entity_super_type: 'object', id: 20, parent_id: 3}
+
+    Communicate with victim 20:
+        Type: communicate
+        Pose: {x: 19.5, y: 12.5}
+        Costs: 60
+        Execution Mode: teleop
+        Entity: {entity_type: 'victim', entity_super_type: 'object', id: 20, parent_id: 3}
+
+Final Set of Actions:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 7.8102, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 6.8076, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+  {'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}
+]

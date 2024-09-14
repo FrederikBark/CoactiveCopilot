@@ -1,0 +1,21 @@
+
+search table 19
+
+
+
+tasks: [
+  {'task': 'affordance', 'entity': {'type': 'table', 'super_type': 'object', 'id': 19}, 'type': 'search'},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 9.0, 'y': 6.5}, 'costs': 6.041522979736328, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 11.0, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 10.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+  {'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 60.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+]
+

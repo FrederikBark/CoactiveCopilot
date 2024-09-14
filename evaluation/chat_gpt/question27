@@ -1,0 +1,114 @@
+To complete the task of going to Room 4 and communicating with victim 20, I will determine the optimal set of actions for the robot, starting from Room 1 at position (6.5, 12).
+
+    The robot must traverse from Room 1 to Room 3 using the open connection at (9, 6.5) because there is no traversal cost for open connections and autonomous traversal is preferred.
+    Then, it must traverse from Room 3 to Room 4 via Door 16 at (15.5, 7). The traversal will be done autonomously, as autonomous traversal has the lowest cost for doors.
+    Once in Room 4, the robot must go to the victim at (14, 9).
+    Finally, the robot communicates with victim 21. Communication can only be done in teleop mode.
+
+Action Plan:
+
+json
+
+[
+    {
+        "type": "goto",
+        "pose": {
+            "x": 9,
+            "y": 6.5
+        },
+        "costs": 2.5,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "connection",
+            "entity_super_type": "object",
+            "id": 0,
+            "parent_id": 1
+        }
+    },
+    {
+        "type": "traverse",
+        "pose": {
+            "x": 9,
+            "y": 6.5
+        },
+        "costs": 0,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "connection",
+            "entity_super_type": "object",
+            "id": 0,
+            "parent_id": 3
+        }
+    },
+    {
+        "type": "goto",
+        "pose": {
+            "x": 15.5,
+            "y": 7
+        },
+        "costs": 6.5,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "door",
+            "entity_super_type": "object",
+            "id": 16,
+            "parent_id": 3
+        }
+    },
+    {
+        "type": "traverse",
+        "pose": {
+            "x": 15.5,
+            "y": 7
+        },
+        "costs": 40,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "door",
+            "entity_super_type": "object",
+            "id": 16,
+            "parent_id": 4
+        }
+    },
+    {
+        "type": "goto",
+        "pose": {
+            "x": 14,
+            "y": 9
+        },
+        "costs": 1.8028,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "victim",
+            "entity_super_type": "object",
+            "id": 21,
+            "parent_id": 4
+        }
+    },
+    {
+        "type": "communicate",
+        "pose": {
+            "x": 14,
+            "y": 9
+        },
+        "costs": 60,
+        "execution_mode": "teleop",
+        "entity": {
+            "entity_type": "victim",
+            "entity_super_type": "object",
+            "id": 21,
+            "parent_id": 4
+        }
+    }
+]
+
+Summary:
+
+    Go to open connection at (9, 6.5) (Cost: 2.5)
+    Traverse the connection to Room 3 (Cost: 0)
+    Go to Door 16 at (15.5, 7) (Cost: 6.5)
+    Traverse Door 16 to Room 4 (Cost: 40)
+    Go to Victim 21 at (14, 9) (Cost: 1.8028)
+    Communicate with Victim 21 (Cost: 60)
+
+Total Cost: 110.8028

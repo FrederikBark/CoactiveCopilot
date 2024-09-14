@@ -1,0 +1,38 @@
+go to cabinet 10
+
+
+To reach cupboard 10, the robot must first traverse door 9 to get to room 2, where cupboard 10 is located. Here are the optimal actions:
+
+1. Go to door 9.
+2. Traverse door 9 to room 2.
+3. Go to cupboard 10.
+
+Here are the actions in detail:
+
+1. **Go to door 9**
+   - Position: (5.5, 4)
+   - Cost: 1.0 (Euclidean distance from (6.5, 12) to (5.5, 4))
+   - Execution Mode: Autonomous
+   - Entity: Door 9
+
+2. **Traverse door 9**
+   - Position: (5.5, 4)
+   - Cost: 20 (Teleop)
+   - Execution Mode: Teleop
+   - Entity: Door 9
+
+3. **Go to cupboard 10**
+   - Position: (4.5, 3.5)
+   - Cost: 1.0 (Euclidean distance from (5.5, 4) to (4.5, 3.5))
+   - Execution Mode: Autonomous
+   - Entity: Cupboard 10
+
+Combining these actions, the result is:
+
+```json
+[
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 1.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 4.5, 'y': 3.5}, 'costs': 1.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'cupboard', 'entity_super_type': 'object', 'id': 10, 'parent_id': 2}}
+]
+```

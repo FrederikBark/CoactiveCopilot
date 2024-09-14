@@ -1,0 +1,11 @@
+search a table in room 1
+
+
+ To search a table in room 1, the robot needs to go to a table and then perform the search action. The table with id 2 is closer to the robot's starting position, so the optimal set of actions would be:
+
+[
+{'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 5.3852, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+{'type': 'search', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 80, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}}
+]
+
+The costs of the first action are 5.3852 (euclidean distance from the starting position to the table) and the costs of the second action are 80 (costs for search action in teleop mode). The total costs for this set of actions is 85.3852.

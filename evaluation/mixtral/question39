@@ -1,0 +1,10 @@
+Without traversing teleoperated, go to room 4
+
+
+ To complete the task of going to room 4 without traversing teleoperated, the robot will need to take the following set of actions:
+
+1. 'goto', {'x': 6.5, 'y': 9}, 'costs': 0.0, 'execution\_mode': 'autonomous', 'entity': {'entity\_type': 'room', 'entity\_super\_type': 'room', 'id': 1, 'parent\_id': 1}
+2. 'goto', {'x': 15.5, 'y': 7}, 'costs': 18.97366, 'execution\_mode': 'autonomous', 'entity': {'entity\_type': 'door', 'entity\_super\_type': 'object', 'id': 16, 'parent\_id': 3}
+3. 'traverse', {'x': 15.5, 'y': 7}, 'costs': 30, 'execution\_mode': 'assisted', 'entity': {'entity\_type': 'door', 'entity\_super\_type': 'object', 'id': 16, 'parent\_id': 4}
+
+The first action moves the robot to the center of room 1, which is the starting position. The second action moves the robot to the door connecting room 3 and room 4. The third action is to traverse the door in assisted mode, as the task specifies not to traverse teleoperated. The combined cost of these actions is 30 + 18.97366 = 48.97366.

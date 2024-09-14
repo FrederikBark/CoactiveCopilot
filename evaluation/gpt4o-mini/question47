@@ -1,0 +1,4 @@
+inspect box 6, but don't use door 16
+
+
+Result: ERROR, There is no valid path to reach box 6.

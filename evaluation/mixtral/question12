@@ -1,0 +1,5 @@
+inspect shelf 4
+
+
+ [{'type': 'goto', 'pose': {'x': 2, 'y': 4.5}, 'costs': 1.4142, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 4, 'parent_id': 1}},
+{'type': 'inspect', 'pose': {'x': 2, 'y': 4.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 4, 'parent_id': 1}}]

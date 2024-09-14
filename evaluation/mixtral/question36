@@ -1,0 +1,11 @@
+go to room 2, but only traverse door 9 assisted
+
+
+ [{'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 2.2361, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 0.7071, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}}]
+
+Explanation:
+1. First, the robot goes to door 9 in room 1 with the lowest cost mode which is autonomous.
+2. Then, the robot traverses door 9 with the requested mode which is assisted.
+3. Finally, the robot goes to the center of room 2 with the lowest cost mode which is autonomous.

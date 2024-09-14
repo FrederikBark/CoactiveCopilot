@@ -1,0 +1,61 @@
+To search the shelf in room 4, follow these steps:
+
+    Traverse from Room 1 to Room 4:
+        Traverse Door 16: Since the only known way to Room 4 from Room 1 is through Door 16, we need to traverse this door.
+
+    Go to the Shelf in Room 4:
+        Go to Shelf 24: After traversing to Room 4, we need to navigate to Shelf 24, which is located at 15.5, 12.5.
+
+    Search the Shelf:
+        Search Shelf 24: Finally, perform the search action on Shelf 24.
+
+Here's the optimal set of actions with the associated costs:
+
+    Traverse Door 16
+        Type: traverse
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 20 (teleop)
+        Execution Mode: teleop
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}
+
+    Go to Shelf 24
+        Type: goto
+        Pose: {'x': 15.5, 'y': 12.5}
+        Costs: 5.5 (Euclidean distance from Door 16's position at 15.5, 7 to Shelf 24's position at 15.5, 12.5)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}
+
+    Search Shelf 24
+        Type: search
+        Pose: {'x': 15.5, 'y': 12.5}
+        Costs: 60 (assisted)
+        Execution Mode: assisted
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}
+
+Complete Action Set:
+
+json
+
+[
+  {
+    "type": "traverse",
+    "pose": {"x": 15.5, "y": 7},
+    "costs": 20,
+    "execution_mode": "teleop",
+    "entity": {"entity_type": "door", "entity_super_type": "object", "id": 16, "parent_id": 3}
+  },
+  {
+    "type": "goto",
+    "pose": {"x": 15.5, "y": 12.5},
+    "costs": 5.5,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "shelf", "entity_super_type": "object", "id": 24, "parent_id": 4}
+  },
+  {
+    "type": "search",
+    "pose": {"x": 15.5, "y": 12.5},
+    "costs": 60,
+    "execution_mode": "assisted",
+    "entity": {"entity_type": "shelf", "entity_super_type": "object", "id": 24, "parent_id": 4}
+  }
+]

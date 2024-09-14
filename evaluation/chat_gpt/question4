@@ -1,0 +1,31 @@
+To go to table 19, which is located in room 3, we need to follow these steps:
+
+    Traverse the open connection between room 1 and room 3.
+    Go to table 19 in room 3.
+
+Here's the optimal set of actions:
+
+    Traverse the open connection to room 3 from room 1:
+        Action: Go to the open connection at 9, 6.5 (where room 1 connects to room 3).
+        Execution Mode: Autonomous
+        Cost: 0.0 (for the autonomous mode, as it’s an open connection)
+
+    Traverse the open connection:
+        Action: Traverse the open connection to room 3.
+        Execution Mode: Autonomous
+        Cost: 0.0 (for the autonomous mode)
+
+    Go to table 19 in room 3:
+        Action: Go to the position of table 19 at 21.5, 6.5 in room 3.
+        Execution Mode: Autonomous
+        Cost: The euclidean distance from the center of room 3 (16, 6) to table 19 (21.5, 6.5) is approximately 5.52.
+
+So, the complete sequence of actions is:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 5.52, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+]

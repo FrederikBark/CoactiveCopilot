@@ -1,0 +1,13 @@
+search table 19
+
+
+ To search table 19 in room 3, the robot needs to first go to room 3, then go to the table and perform the search action. Here is the set of actions to accomplish this task:
+
+[
+{'type': 'goto', 'pose': {'x': 6, 'y': 9}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'connection', 'id': 0, 'parent_id': 3}},
+{'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 18.544, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'furniture', 'id': 19, 'parent_id': 3}},
+{'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'furniture', 'id': 19, 'parent_id': 3}}
+]
+
+The first action is to go to the center of room 1, which is the starting position of the robot. The second action is to traverse the open connection from room 1 to room 3. The third action is to go to table 19 in room 3. The final action is to search table 19. The total cost of this set of actions is 118.544.

@@ -1,0 +1,13 @@
+go to room 3. Don't use door 9
+
+
+ [{'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'connection', 'id': 0, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 16, 'y': 6.5}, 'costs': 12.247, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}}]
+
+Explanation:
+1. The robot starts at position (6.5, 12) in room 1.
+2. To go to room 3 without using door 9, the robot will use the open connection 0 at (9, 6.5).
+3. The robot will move autonomously to the open connection 0 with a cost of 3.6056.
+4. After traversing the open connection 0, the robot will be at position (16, 6.5) in room 3.
+5. The robot will move autonomously to the center of room 3 with a cost of 12.247.
+6. The combined cost of this action set is 3.6056 + 12.247 = 15.8526.

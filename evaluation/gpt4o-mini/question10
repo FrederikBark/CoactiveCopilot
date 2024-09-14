@@ -1,0 +1,22 @@
+go to the person in room 4
+
+
+To go to the victim in room 4, the robot must first traverse from room 1 to room 3 using the open connection, and then from room 3 to room 4 using door 16. Here are the optimal actions:
+
+1. Go to the open connection at (9, 6.5) to traverse to room 3.
+2. Traverse the open connection to room 3.
+3. Go to door 16 at (15.5, 7) to traverse to room 4.
+4. Traverse door 16 to room 4.
+5. Go to the victim at (14, 9).
+
+Here is the set of actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+]
+```

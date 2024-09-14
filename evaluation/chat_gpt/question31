@@ -1,0 +1,50 @@
+To complete the task of inspecting the shelf in room 4 and communicating with victim 21, here's the optimal set of actions with the lowest combined cost:
+
+    Traverse from Room 1 to Room 4:
+        The robot must first traverse from Room 1 to Room 3 using the open connection.
+        Then, traverse from Room 3 to Room 4 using Door 16.
+
+    Go to the shelf in Room 4:
+        After reaching Room 4, the robot must go to the shelf's position.
+
+    Inspect the shelf in Room 4:
+        Inspect the shelf once at its position.
+
+    Go to victim 21:
+        Communicate with victim 21 after inspecting the shelf.
+
+Here is the step-by-step action plan:
+
+    Traverse from Room 1 to Room 3 (open connection):
+        {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}}
+
+    Traverse from Room 3 to Room 4 (door 16):
+        {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}}
+        {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+
+    Go to the shelf in Room 4:
+        {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+
+    Inspect the shelf in Room 4:
+        {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+
+    Go to victim 21:
+        {'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+
+    Communicate with victim 21:
+        {'type': 'communicate', 'pose': {'x': 14, 'y': 9}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+
+Combined Actions:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+  {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}},
+  {'type': 'communicate', 'pose': {'x': 14, 'y': 9}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+]
+
+This set of actions ensures that both tasks are completed with the lowest cost.

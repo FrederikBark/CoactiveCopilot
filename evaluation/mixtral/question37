@@ -1,0 +1,8 @@
+go to room 3, but don't use doors
+
+
+ To go to room 3 without using doors, the robot should traverse the open connection 0 from room 1 to room 3. Since autonomous traversal is preferred and the cost for open connections is 0 for all modes, the optimal action is:
+
+[{'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open\_connection', 'entity_super_type': 'connection', 'id': 0, 'parent_id': 1}}]
+
+After executing this action, the robot will be in room 3.

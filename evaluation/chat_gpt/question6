@@ -1,0 +1,32 @@
+To reach the shelf in room 3 from the starting position in room 1, follow these steps:
+
+    Traverse from Room 1 to Room 3
+        The robot must first traverse the open connection at (9, 6.5) which connects Room 1 to Room 3. This open connection traversal is cost-free but should be done autonomously.
+
+    Go to the Shelf in Room 3
+        The shelf in room 3 is located at (19, 4.5). The robot must navigate to this location within Room 3.
+
+Here is the detailed sequence of actions:
+
+    Traverse the Open Connection
+
+    json
+
+{'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}
+{'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}
+
+Go to the Shelf in Room 3
+
+json
+
+    {'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 10.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}}
+
+Combining these steps, the optimal set of actions needed to go to the shelf in Room 3 is:
+
+json
+
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 10.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}}
+]

@@ -1,0 +1,42 @@
+go to a container
+
+
+To go to a container, the robot must first determine which container is reachable from its current position in room 1. The containers in room 1 are:
+
+- Container 5 at (12.5, 9)
+- Container 6 at (12.5, 10.5)
+- Container 7 at (12.5, 12.5)
+
+The robot is currently at (6.5, 12). The closest container is Container 6 at (12.5, 10.5). 
+
+Now, let's calculate the actions needed to reach Container 6:
+
+1. **Go to the door (traverse to room 2)**: The robot needs to go to door 9 at (5.5, 4) to traverse to room 2.
+2. **Traverse door 9**: The robot will then traverse through door 9 to room 2.
+3. **Go to Container 6**: Finally, the robot will go to Container 6 at (12.5, 10.5).
+
+Now, let's calculate the costs for each action:
+
+1. **Goto door 9**: 
+   - Position: (5.5, 4)
+   - Cost: √((5.5 - 6.5)² + (4 - 12)²) = √(1 + 64) = √65 ≈ 8.0623
+   - Execution mode: Autonomous
+
+2. **Traverse door 9**: 
+   - Cost: 40 (autonomous)
+
+3. **Goto Container 6**: 
+   - Position: (12.5, 10.5)
+   - Cost: √((12.5 - 5.5)² + (10.5 - 4)²) = √(49 + 42.25) = √91.25 ≈ 9.5574
+   - Execution mode: Autonomous
+
+Now, let's compile the actions:
+
+Result:
+```json
+[
+    {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 8.0623, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+    {'type': 'goto', 'pose': {'x': 12.5, 'y': 10.5}, 'costs': 9.5574, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 6, 'parent_id': 2}}
+]
+```

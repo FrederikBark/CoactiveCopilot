@@ -1,0 +1,22 @@
+
+search table 15, but don’t do it autonomous
+
+
+
+tasks: [
+  {'task': 'affordance', 'entity': {'type': 'table', 'super_type': 'object', 'id': 15}, 'type': 'search'},
+]
+
+constraints: [
+  {'constraint': 'disallow_modes', 'modes': ['autonomous']},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 5.0}, 'costs': 7.071067810058594, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 1, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 3.0}, 'costs': 20.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 1, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 8.5, 'y': 4.0}, 'costs': 3.1622776985168457, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}},
+  {'type': 'search', 'pose': {'x': 8.5, 'y': 4.0}, 'costs': 60.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}},
+]
+

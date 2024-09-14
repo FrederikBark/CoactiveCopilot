@@ -1,0 +1,20 @@
+
+goto table 3. Only use assisted functions
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'table', 'super_type': 'object', 'id': 3}},
+]
+
+constraints: [
+  {'constraint': 'disallow_modes', 'modes': ['autonomous', 'teleop']},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 8.0}, 'costs': 7.211102485656738, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}},
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 8.0}, 'costs': 0.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}},
+]
+

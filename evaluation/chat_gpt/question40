@@ -1,0 +1,43 @@
+To inspect table 2 teleoperated, we need to perform the following actions:
+
+    Go to table 2: The robot must first move to the location of table 2.
+    Inspect table 2: Once at table 2, perform the inspection.
+
+Let's calculate the actions:
+
+    Go to table 2: The position of table 2 is (0.5, 10.5). The robot starts at (6.5, 12). The cost for this action is the Euclidean distance between these two points:
+    Distance=(6.5−0.5)2+(12−10.5)2=62+1.52=36+2.25=38.25≈6.18
+    Distance=(6.5−0.5)2+(12−10.5)2
+
+​=62+1.52
+​=36+2.25
+​=38.25
+
+    ​≈6.18
+
+    The action will be performed in autonomous mode (since we need to consider all possible modes, but teleop is specified for inspection).
+
+    Inspect table 2: Inspection of table 2 teleoperated has a cost of 40.
+
+Here's the set of actions with the lowest combined cost:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 0.5, "y": 10.5},
+    "costs": 6.18,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "table", "entity_super_type": "object", "id": 2, "parent_id": 1}
+  },
+  {
+    "type": "inspect",
+    "pose": {"x": 0.5, "y": 10.5},
+    "costs": 40,
+    "execution_mode": "teleop",
+    "entity": {"entity_type": "table", "entity_super_type": "object", "id": 2, "parent_id": 1}
+  }
+]
+
+

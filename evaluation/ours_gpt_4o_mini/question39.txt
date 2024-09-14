@@ -1,0 +1,24 @@
+
+Without traversing teleoperated, go to room 4
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'room', 'super_type': 'room', 'id': 4}},
+]
+
+constraints: [
+  {'constraint': 'disallow_affordance_modes', 'affordance_type': 'traverse', 'modes': ['teleop']},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 9.0, 'y': 6.5}, 'costs': 6.041522979736328, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 11.0, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7.0}, 'costs': 4.527692794799805, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 9.0}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': -1}},
+]
+
+

@@ -1,0 +1,19 @@
+
+go to a container
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'container', 'super_type': 'object', 'id': 'variable'}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 12.5, 'y': 12.5}, 'costs': 6.020797252655029, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 7, 'parent_id': 1}},
+  {'type': 'goto', 'pose': {'x': 12.5, 'y': 12.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 7, 'parent_id': 1}},
+]
+

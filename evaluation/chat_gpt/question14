@@ -1,0 +1,71 @@
+To measure hazards on table 2, we need to perform the following actions:
+
+    Go to Table 2: This requires moving from the robot's current position to the location of Table 2 in Room 1.
+    Measure Hazard on Table 2: Once at the table, we will measure for any hazardous sources.
+
+Here are the detailed steps:
+
+    Go to Table 2
+        Current Position: (6.5, 12)
+        Destination Position: (0.5, 10.5)
+        Distance Calculation: Using Euclidean distance formula:
+        Distance=(6.5−0.5)2+(12−10.5)2=62+1.52=36+2.25=38.25≈6.18
+        Distance=(6.5−0.5)2+(12−10.5)2
+
+​=62+1.52
+​=36+2.25
+​=38.25
+
+        ​≈6.18
+
+    Measure Hazard on Table 2
+        Position: (0.5, 10.5)
+        Cost: 40 for teleop, 35 for autonomous, and 30 for assisted.
+
+Optimal Actions:
+
+    Goto Table 2:
+
+    json
+
+{
+  "type": "goto",
+  "pose": {"x": 0.5, "y": 10.5},
+  "costs": 6.18,
+  "execution_mode": "autonomous",
+  "entity": {"entity_type": "table", "entity_super_type": "object", "id": 2, "parent_id": 1}
+}
+
+Measure Hazard on Table 2:
+
+json
+
+    {
+      "type": "measure_hazard",
+      "pose": {"x": 0.5, "y": 10.5},
+      "costs": 30,
+      "execution_mode": "assisted",
+      "entity": {"entity_type": "table", "entity_super_type": "object", "id": 2, "parent_id": 1}
+    }
+
+Combined Result:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 0.5, "y": 10.5},
+    "costs": 6.18,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "table", "entity_super_type": "object", "id": 2, "parent_id": 1}
+  },
+  {
+    "type": "measure_hazard",
+    "pose": {"x": 0.5, "y": 10.5},
+    "costs": 30,
+    "execution_mode": "assisted",
+    "entity": {"entity_type": "table", "entity_super_type": "object", "id": 2, "parent_id": 1}
+  }
+]
+

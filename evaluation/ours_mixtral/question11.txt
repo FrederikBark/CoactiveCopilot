@@ -1,0 +1,18 @@
+
+go to cabinet 10
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'shelf', 'super_type': 'object', 'id': 10}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+Copilot: I'm sorry, but there is no matching {'type': 'shelf', 'super_type': 'object', 'id': 10} known to me. What should I do?'

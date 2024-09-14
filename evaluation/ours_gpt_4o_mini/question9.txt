@@ -1,0 +1,18 @@
+
+go to room 5
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'room', 'super_type': 'room', 'id': 5}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+Copilot: I'm sorry, but there is no matching {'type': 'room', 'super_type': 'room', 'id': 5} known to me. What should I do?'

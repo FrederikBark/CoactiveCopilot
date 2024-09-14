@@ -1,0 +1,4 @@
+goto  table 3. Only use assisted functions
+
+
+Result: [{'type': 'goto', 'pose': {'x': 0.5, 'y': 8}, 'costs': 5.5, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}}]

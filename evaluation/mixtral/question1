@@ -1,0 +1,5 @@
+go to room 2
+
+
+ [{'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 4.2426, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}}]

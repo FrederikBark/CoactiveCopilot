@@ -1,0 +1,61 @@
+To inspect box 6 without traversing any doors, follow these steps:
+
+    Go to Room 3: Since box 6 is located in Room 3, and we start in Room 1 at position (6.5, 12), we need to traverse to Room 3 via the open connection.
+    Go to Box 6: After arriving in Room 3, move to the position of box 6.
+
+Here's the optimal set of actions:
+
+    Go to the open connection between Room 1 and Room 3:
+        Position: (9, 6.5)
+        Cost: 0 (open connection, autonomous mode preferred)
+        Execution Mode: Autonomous
+        Entity: Open connection
+
+    Traverse to Room 3:
+        Position: (16, 6) (center of Room 3)
+        Cost: 0 (open connection, autonomous mode preferred)
+        Execution Mode: Autonomous
+        Entity: Open connection
+
+    Go to Box 6:
+        Position: (12.5, 10.5)
+        Cost: Euclidean distance from the center of Room 3 to box 6
+        Execution Mode: Autonomous
+        Entity: Box 6
+
+Let's calculate the cost of each step:
+
+    Go to the open connection:
+        From (6.5, 12) to (9, 6.5)
+        Cost: (9−6.5)2+(6.5−12)2(9−6.5)2+(6.5−12)2
+
+​ = 2.52+(−5.5)22.52+(−5.5)2
+​ = 6.25+30.256.25+30.25
+​ = 36.536.5
+
+    ​ ≈ 6.04
+
+Traverse to Room 3:
+
+    Cost: 0 (open connection)
+
+Go to Box 6:
+
+    From (16, 6) to (12.5, 10.5)
+    Cost: (12.5−16)2+(10.5−6)2(12.5−16)2+(10.5−6)2
+
+​ = (−3.5)2+4.52(−3.5)2+4.52
+​ = 12.25+20.2512.25+20.25
+​ = 32.532.5
+
+        ​ ≈ 5.70
+
+Thus, the optimal set of actions is:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 6.04, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 12.5, 'y': 10.5}, 'costs': 5.70, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'box', 'entity_super_type': 'object', 'id': 6, 'parent_id': 3}}
+]

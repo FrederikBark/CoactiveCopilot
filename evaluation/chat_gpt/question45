@@ -1,0 +1,45 @@
+To search table 14 in room 2 without traversing doors, follow these steps:
+
+    Move to Room 2: Since room 1 is connected to room 2 by door 9, which is located at 5.5, 4, we need to navigate through this door to reach room 2.
+    Go to Table 14: Once in room 2, move to table 14, located at 7, 4.
+
+Here's the detailed set of actions:
+
+    Goto Door 9:
+        Type: goto
+        Pose: {'x': 5.5, 'y': 4}
+        Costs: 8.4853 (distance from 6.5, 12 to 5.5, 4)
+        Execution_mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}
+
+    Traverse Door 9:
+        Type: traverse
+        Pose: {'x': 5.5, 'y': 4}
+        Costs: 20 (teleop)
+        Execution_mode: teleop
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}
+
+    Goto Table 14:
+        Type: goto
+        Pose: {'x': 7, 'y': 4}
+        Costs: 1.5 (distance from 7, 3 to 7, 4)
+        Execution_mode: autonomous
+        Entity: {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}
+
+    Search Table 14:
+        Type: search
+        Pose: {'x': 7, 'y': 4}
+        Costs: 60 (assisted)
+        Execution_mode: assisted
+        Entity: {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}
+
+Summary of Actions:
+
+json
+
+[
+    {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 8.4853, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+    {'type': 'goto', 'pose': {'x': 7, 'y': 4}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}},
+    {'type': 'search', 'pose': {'x': 7, 'y': 4}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 14, 'parent_id': 2}}
+]

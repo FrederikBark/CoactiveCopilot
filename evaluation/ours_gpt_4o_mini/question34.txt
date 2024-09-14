@@ -1,0 +1,21 @@
+
+go to room 3. Don’t use door 9
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'room', 'super_type': 'room', 'id': 3}},
+]
+
+constraints: [
+  {'constraint': 'disallow_entity', 'entity': {'type': 'door', 'super_type': 'object', 'id': 9}},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 9.0, 'y': 6.5}, 'costs': 6.041522979736328, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 11.0, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 16.0, 'y': 6.0}, 'costs': 5.024937629699707, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': -1}},
+]
+

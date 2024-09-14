@@ -1,0 +1,7 @@
+go to room 2, inspect box 22
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 4.4721, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 7, 'y': 3.5}, 'costs': 1.4142, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'cupboard', 'entity_super_type': 'object', 'id': 10, 'parent_id': 2}},
+{'type': 'inspect', 'pose': {'x': 7, 'y': 3.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'cupboard', 'entity_super_type': 'object', 'id': 10, 'parent_id': 2}}]

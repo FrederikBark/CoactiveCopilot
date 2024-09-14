@@ -1,0 +1,46 @@
+search the shelf in room 4
+
+
+To search the shelf in room 4, the robot must first traverse to room 4 from room 1. The optimal actions are as follows:
+
+1. Go to the door (door 1) in room 1 to traverse to room 4.
+2. Traverse through door 1 to room 4.
+3. Go to the shelf in room 4.
+4. Search the shelf.
+
+Here are the actions:
+
+1. **Go to door 1**:
+   - Position: (6.5, 13)
+   - Cost: 0.5 (distance to door 1)
+   - Execution Mode: Autonomous
+   - Entity: Door 1
+
+2. **Traverse door 1**:
+   - Position: (6.5, 13)
+   - Cost: 20 (teleop cost for traversing)
+   - Execution Mode: Teleop
+   - Entity: Door 1
+
+3. **Go to shelf 24**:
+   - Position: (15.5, 12.5)
+   - Cost: 8.6023 (distance from door 1 to shelf 24)
+   - Execution Mode: Autonomous
+   - Entity: Shelf 24
+
+4. **Search shelf 24**:
+   - Position: (15.5, 12.5)
+   - Cost: 60 (assisted cost for searching)
+   - Execution Mode: Assisted
+   - Entity: Shelf 24
+
+Combining these actions, the result is:
+
+```json
+[
+  {'type': 'goto', 'pose': {'x': 6.5, 'y': 13}, 'costs': 0.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 1, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 6.5, 'y': 13}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 1, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 8.6023, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+  {'type': 'search', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+]
+```

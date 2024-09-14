@@ -1,0 +1,20 @@
+
+inspect box 6, but don’t use door 16
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'container', 'super_type': 'object', 'id': 6}},
+]
+
+constraints: [
+  {'constraint': 'disallow_entity_affordance', 'affordance_type': 'traverse', 'entity': {'type': 'door', 'super_type': 'object', 'id': 16}},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 12.5, 'y': 10.5}, 'costs': 6.184658527374268, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 6, 'parent_id': 1}},
+  {'type': 'inspect', 'pose': {'x': 12.5, 'y': 10.5}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 6, 'parent_id': 1}},
+]
+

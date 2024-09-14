@@ -1,0 +1,57 @@
+communicate with the victim in room 3
+
+
+To communicate with the victim in room 3, the robot must first go to room 3 and then go to the victim's position. Here are the optimal actions:
+
+1. Traverse the open connection from room 1 to room 3.
+2. Go to the victim's position in room 3.
+3. Communicate with the victim.
+
+Here are the actions in detail:
+
+1. **Traverse the open connection to room 3**:
+   - Goto the open connection at (9, 6.5) from (6.5, 12).
+   - Traverse the open connection.
+
+2. **Go to the victim in room 3**:
+   - Goto the victim's position at (19.5, 12.5).
+
+3. **Communicate with the victim**:
+   - Communicate with the victim.
+
+Now, let's calculate the actions:
+
+1. **Goto open connection**:
+   - Position: (9, 6.5)
+   - Cost: √((9 - 6.5)² + (6.5 - 12)²) = √(2.5² + (-5.5)²) = √(6.25 + 30.25) = √36.5 ≈ 6.0424
+   - Execution mode: Autonomous
+   - Entity: Open connection (not explicitly defined, but we can assume it has an id of 0 and parent_id of 1)
+
+2. **Traverse open connection**:
+   - Position: (9, 6.5)
+   - Cost: 0 (autonomous)
+   - Execution mode: Autonomous
+   - Entity: Open connection (id: 0, parent_id: 1)
+
+3. **Goto victim**:
+   - Position: (19.5, 12.5)
+   - Cost: √((19.5 - 9)² + (12.5 - 6.5)²) = √(10.5² + 6²) = √(110.25 + 36) = √146.25 ≈ 12.083
+   - Execution mode: Autonomous
+   - Entity: Victim (id: 20, parent_id: 3)
+
+4. **Communicate with victim**:
+   - Position: (19.5, 12.5)
+   - Cost: 60 (teleop)
+   - Execution mode: Teleop
+   - Entity: Victim (id: 20, parent_id: 3)
+
+Now, let's compile the actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 6.0424, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 12.083, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+    {'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}
+]
+```

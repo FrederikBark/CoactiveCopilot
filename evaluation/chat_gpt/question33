@@ -1,0 +1,42 @@
+To go to Room 3 without using the open connection 0, we'll need to use the door 9 connecting Room 1 and Room 2 and then traverse from Room 2 to Room 3 through the connection between Room 2 and Room 3.
+
+Here’s the set of actions with the lowest combined cost:
+
+    Goto door 9 in Room 1:
+        Position: 5.5, 4
+        Cost: 8.944 (euclidean distance from 6.5, 12 to 5.5, 4)
+
+    Traverse door 9 to Room 2:
+        Cost: 20 (teleop)
+
+    Goto Room 3 from Room 2:
+        Position: 16, 6
+        Cost: 9.433 (euclidean distance from 7, 3 to 16, 6)
+
+Here’s the complete set of actions:
+
+json
+
+[
+    {
+        "type": "goto",
+        "pose": {"x": 5.5, "y": 4},
+        "costs": 8.944,
+        "execution_mode": "autonomous",
+        "entity": {"entity_type": "door", "entity_super_type": "object", "id": 9, "parent_id": 1}
+    },
+    {
+        "type": "traverse",
+        "pose": {"x": 5.5, "y": 4},
+        "costs": 20,
+        "execution_mode": "teleop",
+        "entity": {"entity_type": "door", "entity_super_type": "object", "id": 9, "parent_id": 2}
+    },
+    {
+        "type": "goto",
+        "pose": {"x": 16, "y": 6},
+        "costs": 9.433,
+        "execution_mode": "autonomous",
+        "entity": {"entity_type": "room", "entity_super_type": "room", "id": 3, "parent_id": 2}
+    }
+]	

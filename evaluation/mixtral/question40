@@ -1,0 +1,24 @@
+Inspect table 2 teleoperated
+
+
+ [{'type': 'goto',
+  'pose': {'x': 0.5, 'y': 10.5},
+  'costs': 5.3852,
+  'execution_mode': 'autonomous',
+  'entity': {'entity_type': 'table',
+             'entity_super_type': 'object',
+             'id': 2,
+             'parent_id': 1}},
+ {'type': 'inspect',
+  'pose': {'x': 0.5, 'y': 10.5},
+  'costs': 40,
+  'execution_mode': 'teleop',
+  'entity': {'entity_type': 'table',
+             'entity_super_type': 'object',
+             'id': 2,
+             'parent_id': 1}}]
+
+Explanation:
+1. The robot needs to inspect table 2 which is in room 1 at position (0.5, 10.5).
+2. First, the robot moves to the table from its starting position (6.5, 12) with the lowest cost mode which is autonomous.
+3. Then, the robot inspects the table using teleoperated mode as specified in the task.

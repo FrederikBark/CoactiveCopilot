@@ -1,0 +1,28 @@
+To go to Room 2, starting from Room 1 and only traverse Door 9 with assisted mode, the robot should follow these steps:
+
+    Move to Door 9 from the starting position.
+    Traverse Door 9 using assisted mode.
+    Go to the center of Room 2.
+
+Here is the optimal set of actions:
+
+    Goto Door 9
+        Position: (5.5, 4) (where Door 9 is located)
+        Cost: Euclidean distance from (6.5, 12) to (5.5, 4) = 8.246 (approximately)
+
+    Traverse Door 9 using assisted mode
+        Cost: 30
+
+    Goto the center of Room 2
+        Position: (7, 3) (center of Room 2)
+        Cost: Euclidean distance from (5.5, 4) to (7, 3) = 2.236 (approximately)
+
+Combining these actions:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 8.246, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 2.236, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}}
+]

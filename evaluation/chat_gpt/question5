@@ -1,0 +1,66 @@
+To go to a container in the current scenario, we first need to determine the closest container and the appropriate actions required to reach it.
+Summary of Containers and Their Locations:
+
+    Room 1:
+        Container 5 at 12.5, 9
+        Container 6 at 12.5, 10.5
+        Container 7 at 12.5, 12.5
+    Room 3:
+        Container 18 at 21, 5.5
+
+Task Execution:
+
+    Find the nearest container:
+        Container 5: Distance from starting position (6.5, 12) is calculated as (12.5−6.5)2+(9−12)2=62+(−3)2=36+9=45≈6.708(12.5−6.5)2+(9−12)2
+
+​=62+(−3)2
+​=36+9
+​=45
+​≈6.708
+Container 6: Distance is (12.5−6.5)2+(10.5−12)2=62+(−1.5)2=36+2.25=38.25≈6.187(12.5−6.5)2+(10.5−12)2
+​=62+(−1.5)2
+​=36+2.25
+​=38.25
+​≈6.187
+Container 7: Distance is (12.5−6.5)2+(12.5−12)2=62+0.52=36+0.25=36.25≈6.020(12.5−6.5)2+(12.5−12)2
+​=62+0.52
+​=36+0.25
+​=36.25
+​≈6.020
+Container 18: Distance from starting position (6.5, 12) is (21−6.5)2+(5.5−12)2=14.52+(−6.5)2=210.25+42.25=252.5≈15.9(21−6.5)2+(5.5−12)2
+​=14.52+(−6.5)2
+​=210.25+42.25
+​=252.5
+
+        ​≈15.9
+
+    The closest container is Container 7 in Room 1 at 12.5, 12.5.
+
+    Plan the route:
+        The robot is already in Room 1 at position (6.5, 12).
+        Move to Container 7 located at (12.5, 12.5) in Room 1.
+
+Actions:
+
+    Goto Container 7:
+        Type: goto
+        Pose: {'x': 12.5, 'y': 12.5}
+        Costs: (12.5−6.5)2+(12.5−12)2≈6.020(12.5−6.5)2+(12.5−12)2
+
+        ​≈6.020
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'container', 'entity_super_type': 'object', 'id': 7, 'parent_id': 1}
+
+Result:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 12.5, "y": 12.5},
+    "costs": 6.0208,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "container", "entity_super_type": "object", "id": 7, "parent_id": 1}
+  }
+]

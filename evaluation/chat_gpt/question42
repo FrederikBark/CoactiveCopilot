@@ -1,0 +1,47 @@
+To go to table 3 using only assisted functions, follow these steps:
+
+    Traverse Door 1: The robot must first traverse door 1 to access other parts of the building.
+    Go to Room 2: From the door, navigate to room 2.
+    Go to Room 1: From room 2, return to room 1.
+    Go to Table 3: Finally, move to table 3.
+
+Here are the actions needed:
+
+    Traverse Door 1 (Assisted)
+        Action: Traverse Door 1
+        Pose: {x: 6.5, y: 13}
+        Cost: 30
+        Execution Mode: Assisted
+        Entity: Door 1 in Room 1
+
+    Go to Room 2
+        Action: Go to Room 2 (Center at 7, 3)
+        Pose: {x: 7, y: 3}
+        Cost: 6.5 (Euclidean distance from 6.5, 13 to 7, 3)
+        Execution Mode: Assisted
+        Entity: Room 2 (ID: 2, Parent ID: 1)
+
+    Go to Room 1
+        Action: Go to Room 1 (Center at 6, 9)
+        Pose: {x: 6, y: 9}
+        Cost: 6.5 (Euclidean distance from 7, 3 to 6, 9)
+        Execution Mode: Assisted
+        Entity: Room 1 (ID: 1, Parent ID: 2)
+
+    Go to Table 3
+        Action: Go to Table 3 (Position at 0.5, 8)
+        Pose: {x: 0.5, y: 8}
+        Cost: 5.656 (Euclidean distance from 6, 9 to 0.5, 8)
+        Execution Mode: Assisted
+        Entity: Table 3 in Room 1
+
+The final set of actions is:
+
+json
+
+[
+  {'type': 'traverse', 'pose': {'x': 6.5, 'y': 13}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 1, 'parent_id': 1}},
+  {'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 6.5, 'execution_mode': 'assisted', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 1}},
+  {'type': 'goto', 'pose': {'x': 6, 'y': 9}, 'costs': 6.5, 'execution_mode': 'assisted', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 8}, 'costs': 5.656, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}}
+]

@@ -1,0 +1,11 @@
+communicate with shelf 4
+
+
+ To communicate with shelf 4, the robot is already in the same room as the shelf, so no need to traverse or change rooms. The only action needed is to communicate with the shelf. However, since communicating with objects is only possible in teleoperated mode, the robot must first move close enough to the shelf to communicate with it. Here is the set of actions to do this:
+
+[
+{'type': 'goto', 'pose': {'x': 2, 'y': 4.5}, 'costs': 4.2426, 'execution_mode': 'autonomous', 'entity': {'entity\_type': 'shelf', 'entity\_super\_type': 'object', 'id': 4, 'parent\_id': 1}},
+{'type': 'communicate', 'pose': {'x': 2, 'y': 4.5}, 'costs': 60, 'execution\_mode': 'teleop', 'entity': {'entity\_type': 'shelf', 'entity\_super\_type': 'object', 'id': 4, 'parent\_id': 1}}
+]
+
+The first action moves the robot to a position close to shelf 4 in autonomous mode, and the second action communicates with the shelf in teleoperated mode. The total cost of this set of actions is 64.2426.

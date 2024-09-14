@@ -1,0 +1,68 @@
+To complete the task of inspecting shelf 24 after inspecting shelf 17 with the lowest combined cost, follow these steps:
+
+    Go to shelf 17 in Room 3:
+        Start from Room 1 and traverse the open connection to Room 3.
+        Go to shelf 17's position in Room 3.
+        Inspect shelf 17.
+
+    Go to shelf 24 in Room 4:
+        Traverse from Room 3 to Room 4 using door 16.
+        Go to shelf 24's position in Room 4.
+        Inspect shelf 24.
+
+Here’s the optimal set of actions:
+
+    Go to shelf 17:
+        Action: goto
+        Pose: {'x': 19, 'y': 4.5}
+        Costs: 9.5364 (distance from 6.5, 12 to 19, 4.5)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}
+
+    Inspect shelf 17:
+        Action: inspect
+        Pose: {'x': 19, 'y': 4.5}
+        Costs: 30 (assisted mode, the lowest cost)
+        Execution Mode: assisted
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}
+
+    Traverse to Room 4:
+        Action: goto
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 7.8155 (distance from 19, 4.5 to 15.5, 7)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}
+
+    Traverse door 16:
+        Action: traverse
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 40 (autonomous mode)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}
+
+    Go to shelf 24:
+        Action: goto
+        Pose: {'x': 15.5, 'y': 12.5}
+        Costs: 5.5 (distance from 15.5, 7 to 15.5, 12.5)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}
+
+    Inspect shelf 24:
+        Action: inspect
+        Pose: {'x': 15.5, 'y': 12.5}
+        Costs: 30 (assisted mode, the lowest cost)
+        Execution Mode: assisted
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}
+
+Summary of Actions
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 9.5364, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+  {'type': 'inspect', 'pose': {'x': 19, 'y': 4.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 7.8155, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+  {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+]

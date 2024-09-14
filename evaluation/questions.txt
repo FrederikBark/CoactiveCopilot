@@ -1,0 +1,50 @@
+go to room 2
+go to room 4
+go to table 2
+go to table 19
+go to a container
+go to the shelf in room 3
+go to the victim in room 4
+go to shelf 6
+go to room 5
+go to the person in room 4
+go to cabinet 10
+inspect shelf 4
+search table 19
+measure hazards on table 2
+search the shelf in room 4
+communicate with the victim in room 3
+go to the victim in room 1
+search door 9
+clean table 19
+search a table in room 1
+communicate with shelf 4
+go to room 3. inspect shelf 17
+go to room 2 and search table 12
+go to room 2, go to room 3, go to room 4
+go to room 5, go to room 6
+go to room 2, inspect box 22
+go to room 4, communicate with victim 20
+communicate with victim 20 and victim 21
+measure hazards on table 2, then measure hazards on table 19
+inspect shelf 24 after inspecting shelf 17
+inspect the shelf in room 4. Also communicate with victim 21
+go to room 2, but don't use door 9
+go to room 3, but don't use open connection 0
+go to room 3. Don't use door 9
+go to room 4, but only traverse doors autonomous
+go to room 2, but only traverse door 9 assisted 
+go to room 3, but don't use doors
+inspect shelf 24 but don't use assisted functions
+Without traversing teleoperated, go to room 4
+Inspect table 2 teleoperated
+search table 3 assisted
+goto  table 3. Only use assisted functions
+inspect box 5 without autonomous, assisted or teleoperated abilities
+inspect box 6 without traversing doors
+search table 14 without traversing doors
+inspect box 23, but don't use door 16
+inspect box 6, but don't use door 16
+go to the chair in room 2
+search table 15, but don't do it autonomous
+inspect box 23, search table 19. Do everything assisted

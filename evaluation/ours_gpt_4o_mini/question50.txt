@@ -1,0 +1,29 @@
+
+inspect box 23, search table 19. Do everything assisted
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'container', 'super_type': 'object', 'id': 23}},
+  {'task': 'affordance', 'type': 'search', 'entity': {'type': 'table', 'super_type': 'object', 'id': 19}},
+]
+
+constraints: [
+  {'constraint': 'disallow_modes', 'modes': ['assisted']},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 9.0, 'y': 6.5}, 'costs': 6.041522979736328, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 11.0, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7.0}, 'costs': 4.527692794799805, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 9.0}, 'costs': 20.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 17.0, 'y': 11.0}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}},
+  {'type': 'inspect', 'pose': {'x': 17.0, 'y': 11.0}, 'costs': 35.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 9.0}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 4}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7.0}, 'costs': 20.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 6.020797252655029, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+  {'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 70.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+]
+

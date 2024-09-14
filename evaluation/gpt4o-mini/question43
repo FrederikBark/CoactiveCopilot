@@ -1,0 +1,4 @@
+inspect box 5 without autonomous, assisted or teleoperated abilities
+
+
+ERROR, Inspecting box 5 is not possible without using any execution mode (autonomous, assisted, or teleoperated).

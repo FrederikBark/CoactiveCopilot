@@ -1,0 +1,77 @@
+inspect the shelf in room 4. Also communicate with victim 21
+
+
+To inspect the shelf in room 4 and communicate with victim 21, the robot must first traverse to room 4. Here are the optimal actions:
+
+1. **Go to the open connection to room 3** (at position 9, 6.5).
+2. **Traverse the open connection to room 3**.
+3. **Go to the door 16 to room 4** (at position 15.5, 7).
+4. **Traverse door 16 to room 4**.
+5. **Go to the shelf 24 in room 4** (at position 15.5, 12.5).
+6. **Inspect the shelf 24**.
+7. **Communicate with victim 21** (at position 14, 9).
+
+Now, let's break down the actions:
+
+1. **Go to the open connection**:
+   - Action: `goto`
+   - Pose: `{x: 9, y: 6.5}`
+   - Costs: `2.5` (autonomous)
+   - Entity: `{'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}`
+
+2. **Traverse the open connection**:
+   - Action: `traverse`
+   - Pose: `{x: 9, y: 6.5}`
+   - Costs: `0.0` (autonomous)
+   - Entity: `{'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}`
+
+3. **Go to door 16**:
+   - Action: `goto`
+   - Pose: `{x: 15.5, y: 7}`
+   - Costs: `6.5` (autonomous)
+   - Entity: `{'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}`
+
+4. **Traverse door 16**:
+   - Action: `traverse`
+   - Pose: `{x: 15.5, y: 7}`
+   - Costs: `40.0` (autonomous)
+   - Entity: `{'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}`
+
+5. **Go to shelf 24**:
+   - Action: `goto`
+   - Pose: `{x: 15.5, y: 12.5}`
+   - Costs: `5.5` (autonomous)
+   - Entity: `{'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}`
+
+6. **Inspect shelf 24**:
+   - Action: `inspect`
+   - Pose: `{x: 15.5, y: 12.5}`
+   - Costs: `30.0` (assisted)
+   - Entity: `{'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}`
+
+7. **Go to victim 21**:
+   - Action: `goto`
+   - Pose: `{x: 14, y: 9}`
+   - Costs: `1.5` (autonomous)
+   - Entity: `{'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}`
+
+8. **Communicate with victim 21**:
+   - Action: `communicate`
+   - Pose: `{x: 14, y: 9}`
+   - Costs: `60.0` (teleop)
+   - Entity: `{'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}`
+
+Now, let's compile the actions into a single result:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+    {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}},
+    {'type': 'communicate', 'pose': {'x': 14, 'y': 9}, 'costs': 60.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+]
+```

@@ -1,0 +1,66 @@
+To search table 15 while avoiding autonomous mode, follow these steps:
+
+    Go to Room 2: Start by moving from Room 1 to Room 2.
+    Go to Table 15: Once in Room 2, navigate to Table 15.
+    Search Table 15: Perform the search action on Table 15 using either teleop or assisted mode.
+
+Here’s the breakdown of the steps and their costs:
+
+    Go to Room 2:
+        Goto: Move to door 9 at 5.5, 4 in Room 1.
+        Traverse: Move through door 9 to Room 2.
+        Goto: Move to the center of Room 2 at 7, 3.
+
+    Go to Table 15:
+        Goto: Move to Table 15 at 8.5, 4 in Room 2.
+
+    Search Table 15:
+        Use Search in either teleop or assisted mode.
+
+Here’s the complete set of actions:
+
+    Goto door 9:
+
+    json
+
+{'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}}
+
+Traverse door 9:
+
+json
+
+{'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}}
+
+Goto Room 2:
+
+json
+
+{'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}}
+
+Goto Table 15:
+
+json
+
+{'type': 'goto', 'pose': {'x': 8.5, 'y': 4}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}}
+
+Search Table 15:
+
+    Assisted Mode:
+
+    json
+
+        {'type': 'search', 'pose': {'x': 8.5, 'y': 4}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}}
+
+Complete Action Sequence:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 8.5, 'y': 4}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}},
+  {'type': 'search', 'pose': {'x': 8.5, 'y': 4}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}}
+]
+
+This sequence ensures the task is completed using the non-autonomous modes where possible, while achieving the lowest combined cost.

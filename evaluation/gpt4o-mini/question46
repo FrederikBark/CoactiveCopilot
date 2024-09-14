@@ -1,0 +1,4 @@
+inspect box 23, but don't use door 16
+
+
+ERROR, There is no valid path to reach box 23 without using door 16.

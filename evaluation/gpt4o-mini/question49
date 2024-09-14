@@ -1,0 +1,5 @@
+search table 15, but don't do it autonomous
+
+
+Result: [{'type': 'goto', 'pose': {'x': 8.5, 'y': 4}, 'costs': 2.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}},
+{'type': 'search', 'pose': {'x': 8.5, 'y': 4}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 15, 'parent_id': 2}}]

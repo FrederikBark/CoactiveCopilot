@@ -1,0 +1,19 @@
+
+search a table in room 1
+
+
+
+tasks: [
+  {'task': 'affordance', 'entity': {'type': 'table', 'super_type': 'object', 'location': 'room 1', 'id': 'variable'}, 'type': 'search'},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.184658527374268, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+  {'type': 'search', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 60.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+]
+

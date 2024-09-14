@@ -1,0 +1,18 @@
+go to room 3, but don't use open connection 0
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 9}, 'costs': 0.7071, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'connection', 'id': 0, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 6.5, 'y': 4}, 'costs': 5.6569, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 3}}]
+
+Explanation:
+Since the robot starts at 6.5, 12, it first goes to the center of room 1, which is at 6, 9. The cost for this action is 0.7071 (the Euclidean distance between the starting position and the center of room 1).
+
+Next, the robot goes to open connection 0, which is at 9, 6.5. The cost for this action is 3.6056 (the Euclidean distance between the center of room 1 and open connection 0).
+
+Since the robot cannot traverse open connections autonomously, it needs to go to a door to traverse to the next room. Therefore, the robot goes to door 9, which is at 6.5, 4. The cost for this action is 5.6569 (the Euclidean distance between open connection 0 and door 9).
+
+Finally, the robot traverses door 9 to enter room 3. The cost for this action is 20 when executed in teleop mode.
+
+Note: The cost for the last action is higher than the cost for traversing open connection 0 in autonomous mode, but the task specifies not to use open connection 0. Therefore, the robot must use door 9 to enter room 3, even if it results in a higher overall cost.

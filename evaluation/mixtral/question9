@@ -1,0 +1,29 @@
+go to room 5
+
+
+ ERROR, There is no room 5 in the current scenario.
+
+The rooms in the current scenario are:
+
+* Room 1 with center at (6, 9)
+* Room 2 with center at (7, 3)
+* Room 3 with center at (16, 6)
+* Room 4 with center at (15.5, 10.5)
+
+To go to a room, the robot should go to the center position of that room. Therefore, to go to a valid room, the robot should follow the actions:
+
+[{'type': 'goto', 'pose': {'x': 6, 'y': 9}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}}]
+
+or
+
+[{'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}}]
+
+or
+
+[{'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}}]
+
+or
+
+[{'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}}]
+
+The lowest combined cost is 0.0, which is the cost of going to the center position of the room.
