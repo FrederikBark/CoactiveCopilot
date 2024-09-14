@@ -1,0 +1,18 @@
+
+inspect box 5 without autonomous, assisted or teleoperated abilities
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'container', 'super_type': 'object', 'id': 5}},
+]
+
+constraints: [
+  {'constraint': 'disallow_modes', 'modes': ['autonomous', 'assisted', 'teleop']},
+]
+
+
+
+actions: [
+]
+

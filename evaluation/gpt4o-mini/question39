@@ -1,0 +1,20 @@
+Without traversing teleoperated, go to room 4
+
+
+To go to room 4 without traversing teleoperated, the robot must first go to the open connection to room 3 and then traverse to room 3. After that, it can go to room 4 through the door. Here are the optimal actions:
+
+1. Go to the open connection at (9, 6.5) to enter room 3.
+2. Traverse the open connection to room 3.
+3. Go to the door at (15.5, 7) to enter room 4.
+4. Traverse the door to room 4.
+
+Here are the actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+]
+```

@@ -1,0 +1,14 @@
+search the shelf in room 4
+
+
+ To search the shelf in room 4, the robot needs to go to room 4 first, then to the shelf. Here is the optimal set of actions to accomplish this task:
+
+[
+{'type': 'goto', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 4.4721, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 22.3607, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 1.4142, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+{'type': 'search', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+]
+
+The robot will first traverse door 9 to go to room 2, then traverse to room 4, go to the shelf, and then search it. The total cost of this set of actions is 118.2470.

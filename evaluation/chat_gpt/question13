@@ -1,0 +1,49 @@
+To perform the task of searching table 19, which is in Room 3, the robot needs to move from its starting position in Room 1, traverse the open connection to Room 3, and then search the table. The steps will be outlined in a set of actions optimized for the lowest combined cost.
+Steps:
+
+    Goto the open connection at 9, 6.5 to move from Room 1 to Room 3.
+    Traverse the open connection between Room 1 and Room 3.
+    Goto table 19 at 21.5, 6.5 in Room 3.
+    Search table 19.
+
+Actions:
+
+    Goto open connection at (9, 6.5)
+
+    json
+
+{'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.2016, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}}
+
+Traverse open connection to Room 3
+
+json
+
+{'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}
+
+Goto table 19 at (21.5, 6.5) in Room 3
+
+json
+
+{'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 12.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+
+Search table 19
+
+json
+
+    {'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+
+Summary of Actions:
+
+json
+
+[
+   {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.2016, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+   {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+   {'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 12.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+   {'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+]
+
+Total Cost:
+
+    75.7016 (3.2016 for Goto, 0 for Traverse, 12.5 for Goto, 60 for Search)
+    This is the optimal action sequence for searching table 19 in Room 3.

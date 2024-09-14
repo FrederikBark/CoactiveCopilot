@@ -1,0 +1,13 @@
+search table 3 assisted
+
+
+ [{'type': 'goto',
+  'pose': {'x': 0.5, 'y': 8},
+  'costs': 5.099,
+  'execution_mode': 'autonomous',
+  'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}},
+ {'type': 'search',
+  'pose': {'x': 0.5, 'y': 8},
+  'costs': 60,
+  'execution_mode': 'assisted',
+  'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}}]

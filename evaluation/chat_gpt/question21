@@ -1,0 +1,50 @@
+To perform the task of communicating with shelf 4 in room 1, we need to first go to the location of the shelf and then attempt the desired action. However, "communicate" is not a valid action for a shelf; instead, you can only inspect or measure hazards for a shelf.
+
+Here are the steps to reach the shelf 4 and execute an action:
+
+    Move to shelf 4 at (2, 4.5) from the starting position (6.5, 12).
+    Inspect the shelf (or measure hazards if requested in future).
+
+Since the lowest cost mode should be chosen, autonomous movement is preferred, and assisted mode will be chosen for inspection due to lower cost compared to teleop and autonomous.
+Set of Actions:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 2, "y": 4.5},
+    "costs": 8.209,
+    "execution_mode": "autonomous",
+    "entity": {
+      "entity_type": "shelf",
+      "entity_super_type": "object",
+      "id": 4,
+      "parent_id": 1
+    }
+  },
+  {
+    "type": "inspect",
+    "pose": {"x": 2, "y": 4.5},
+    "costs": 30,
+    "execution_mode": "assisted",
+    "entity": {
+      "entity_type": "shelf",
+      "entity_super_type": "object",
+      "id": 4,
+      "parent_id": 1
+    }
+  }
+]
+
+Breakdown:
+
+    Goto action: Moving to shelf 4's position at (2, 4.5) from the robot's starting point at (6.5, 12) in autonomous mode. The Euclidean distance cost is calculated as:
+    cost=(6.5−2)2+(12−4.5)2=8.209
+    cost=(6.5−2)2+(12−4.5)2
+
+    ​=8.209
+
+    Inspect action: Once at the shelf, the robot inspects it in assisted mode for a cost of 30.
+
+Total combined cost: 8.209+30=38.2098.209+30=38.209.

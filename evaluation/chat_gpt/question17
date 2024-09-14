@@ -1,0 +1,16 @@
+o accomplish the task of going to the victim in room 1, we need to determine the victim's exact position within Room 1 and calculate the optimal path to reach it. Here are the steps involved:
+
+    Identify the victim's position:
+        From the scenario description, there is no victim explicitly listed in Room 1. The victims are only mentioned in Room 3 and Room 4.
+
+    Determine the next steps:
+        Since there is no victim in Room 1, the task cannot be fulfilled as described.
+
+Conclusion: The task "go to the victim in room 1" cannot be completed because there is no victim in Room 1.
+
+Result:
+
+json
+
+ERROR, There is no victim in room 1
+

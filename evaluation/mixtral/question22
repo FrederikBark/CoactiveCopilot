@@ -1,0 +1,7 @@
+go to room 3. inspect shelf 17
+
+
+ [{'type': 'goto', 'pose': {'x': 6, 'y': 9}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+ {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 5.6569, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'connection', 'id': 0, 'parent_id': 1}},
+ {'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 12.2475, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+ {'type': 'inspect', 'pose': {'x': 19, 'y': 4.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}}]

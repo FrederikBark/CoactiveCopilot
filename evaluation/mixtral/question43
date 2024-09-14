@@ -1,0 +1,4 @@
+inspect box 5 without autonomous, assisted or teleoperated abilities
+
+
+ ERROR: The action "inspect box 5 without autonomous, assisted or teleoperated abilities" is not possible, as it is necessary to specify an execution mode for the "inspect" action.

@@ -1,0 +1,10 @@
+go to a container
+
+
+ To perform the task of going to a container in the same room as the robot, we need to identify the closest container to the robot's current position. In this case, the robot is in room 1 and the containers in this room are 5, 6, and 7. The closest container to the robot is container 5, located at position (12.5, 9). To reach this container, the robot can take the following set of actions:
+
+[
+{'type': 'goto', 'pose': {'x': 12.5, 'y': 9}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 5, 'parent_id': 1}}
+]
+
+The cost of this action is the Euclidean distance between the robot's current position and the container's position, which is 3.6056. The execution mode is set to 'autonomous' as it is the preferred mode for this action. The entity type is 'container', the entity super type is 'object', and the entity id is 5, which corresponds to the id of the container. The parent id is 1, which corresponds to the id of the room the container is located in.

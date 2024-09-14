@@ -1,0 +1,52 @@
+To perform the task of searching table 3 in Room 1 with the lowest combined cost, follow these steps:
+
+    Go to Table 3: Since Table 3 is in Room 1 and the robot is already in Room 1, we first need to move to the position of Table 3. The position of Table 3 is (0.5, 8).
+
+    Search Table 3: Once at Table 3, the robot will perform the search action.
+
+Let's calculate the costs and actions:
+
+    Go to Table 3:
+        Position of the robot initially: (6.5, 12)
+        Position of Table 3: (0.5, 8)
+        Euclidean distance to Table 3: (6.5−0.5)2+(12−8)2(6.5−0.5)2+(12−8)2
+
+​ = 62+4262+42
+​ = 36+1636+16
+​ = 5252
+
+        ​ ≈ 7.2111
+
+    Search Table 3 (Assisted):
+        Cost for searching with assisted mode: 60
+
+So the optimal set of actions is:
+
+json
+
+[
+    {
+        "type": "goto",
+        "pose": {"x": 0.5, "y": 8},
+        "costs": 7.2111,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "table",
+            "entity_super_type": "object",
+            "id": 3,
+            "parent_id": 1
+        }
+    },
+    {
+        "type": "search",
+        "pose": {"x": 0.5, "y": 8},
+        "costs": 60,
+        "execution_mode": "assisted",
+        "entity": {
+            "entity_type": "table",
+            "entity_super_type": "object",
+            "id": 3,
+            "parent_id": 1
+        }
+    }
+]

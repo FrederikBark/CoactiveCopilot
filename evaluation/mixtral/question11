@@ -1,0 +1,14 @@
+go to cabinet 10
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 12}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 4.5, 'y': 3.5}, 'costs': 10.630, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'cupboard', 'entity_super_type': 'object', 'id': 10, 'parent_id': 1}}]
+
+Explanation:
+1. The robot starts in room 1 at position (6.5, 12).
+2. To reach cupboard 10, the robot needs to move to the position (4.5, 3.5).
+3. The optimal path is to move from the starting position (6.5, 12) to the center of room 1 (6, 9) and then to cupboard 10 (4.5, 3.5).
+4. The costs for the actions are calculated as follows:
+   - Cost for 'goto' from (6.5, 12) to (6, 9): 3.6056 (euclidean distance)
+   - Cost for 'goto' from (6, 9) to (4.5, 3.5): 10.630 (euclidean distance)
+5. The total cost for the set of actions is 14.2356.

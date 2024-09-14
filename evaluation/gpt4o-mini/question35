@@ -1,0 +1,44 @@
+go to room 4, but only traverse doors autonomous
+
+
+To go to room 4 while only traversing doors autonomously, the robot will need to follow these steps:
+
+1. Go to door 9 in room 1.
+2. Traverse door 9 to room 2.
+3. Go to door 16 in room 3.
+4. Traverse door 16 to room 4.
+
+Here are the actions:
+
+1. **Go to door 9**:
+   - Position: (5.5, 4)
+   - Cost: 1.0 (Euclidean distance from (6.5, 12) to (5.5, 4))
+   - Execution mode: Autonomous
+
+2. **Traverse door 9**:
+   - Position: (5.5, 4)
+   - Cost: 40 (Autonomous cost for traversing the door)
+   - Execution mode: Teleop
+
+3. **Go to door 16**:
+   - Position: (15.5, 7)
+   - Cost: 9.0 (Euclidean distance from (7, 3) to (15.5, 7))
+   - Execution mode: Autonomous
+
+4. **Traverse door 16**:
+   - Position: (15.5, 7)
+   - Cost: 40 (Autonomous cost for traversing the door)
+   - Execution mode: Teleop
+
+Now, let's compile these actions into the optimal set:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 1.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 9.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+]
+```
+
+This set of actions will take the robot from room 1 to room 4 while only traversing doors autonomously.

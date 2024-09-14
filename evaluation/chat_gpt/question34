@@ -1,0 +1,48 @@
+To go to Room 3 without using Door 9, you need to traverse through Room 1 and Room 3 using the open connection between Room 1 and Room 3. Here are the steps:
+
+    Go to the open connection from Room 1 to Room 3:
+        Position: (6, 9) in Room 1 (center of Room 1)
+        Target Position for open connection: (9, 6.5)
+        Cost to reach this position: Euclidean distance = (9−6)2+(6.5−9)2≈3.6056(9−6)2+(6.5−9)2
+
+    ​≈3.6056
+
+Traverse the open connection to Room 3:
+
+    Mode: Autonomous (preferred)
+    Cost: 0 (traversing open connection is free in any mode)
+
+Go to the center of Room 3:
+
+    Position: (9, 6.5) in Room 3 (where the open connection leads to)
+    Target Position for Room 3: (16, 6)
+    Cost to reach this position: Euclidean distance = (16−9)2+(6−6.5)2≈7.0711(16−9)2+(6−6.5)2
+
+        ​≈7.0711
+
+Combining these actions:
+
+    Goto open connection (autonomous):
+        Pose: {x: 9, y: 6.5}
+        Cost: 3.6056
+        Execution Mode: Autonomous
+
+    Traverse open connection (autonomous):
+        Pose: {x: 9, y: 6.5}
+        Cost: 0
+        Execution Mode: Autonomous
+
+    Goto center of Room 3 (autonomous):
+        Pose: {x: 16, y: 6}
+        Cost: 7.0711
+        Execution Mode: Autonomous
+
+Here is the optimal set of actions:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 7.0711, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}}
+]

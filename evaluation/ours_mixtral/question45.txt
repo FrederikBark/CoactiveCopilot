@@ -1,0 +1,18 @@
+
+search table 14 without traversing doors
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'table', 'super_type': 'object', 'id': 14}},
+]
+
+constraints: [
+  {'constraint': 'disallow_entity_affordance', 'affordance_type': 'traverse', 'entity': {'type': 'door', 'super_type': 'object'}},
+]
+
+
+
+actions: [
+]
+

@@ -1,0 +1,64 @@
+go to room 2, go to room 3, go to room 4
+
+
+To go to room 2, then room 3, and finally room 4, the robot will need to traverse the door between room 1 and room 2, then use the open connection to go to room 3, and finally traverse the door to room 4. Here are the optimal actions:
+
+1. **Go to door 9 (to room 2)**
+2. **Traverse door 9 (to room 2)**
+3. **Go to room 3 (using open connection)**
+4. **Go to door 16 (to room 4)**
+5. **Traverse door 16 (to room 4)**
+
+Here are the actions in detail:
+
+1. **Go to door 9**
+   - Position: (5.5, 4)
+   - Cost: 1.5 (autonomous)
+   - Action: 
+   ```json
+   {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}}
+   ```
+
+2. **Traverse door 9**
+   - Position: (5.5, 4)
+   - Cost: 20 (teleop)
+   - Action: 
+   ```json
+   {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}}
+   ```
+
+3. **Go to room 3 (using open connection)**
+   - Position: (16, 6)
+   - Cost: 0 (autonomous)
+   - Action: 
+   ```json
+   {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 2}}
+   ```
+
+4. **Go to door 16**
+   - Position: (15.5, 7)
+   - Cost: 0 (autonomous)
+   - Action: 
+   ```json
+   {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}}
+   ```
+
+5. **Traverse door 16**
+   - Position: (15.5, 7)
+   - Cost: 20 (teleop)
+   - Action: 
+   ```json
+   {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+   ```
+
+Combining all actions, the final result is:
+
+```json
+[
+   {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+   {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+   {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 2}},
+   {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+   {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+]
+```

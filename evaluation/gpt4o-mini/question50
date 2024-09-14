@@ -1,0 +1,62 @@
+inspect box 23, search table 19. Do everything assisted
+
+
+To perform the task of inspecting box 23 and searching table 19 while executing all actions in assisted mode, the robot will need to follow these steps:
+
+1. **Go to Room 4** (where box 23 is located).
+2. **Inspect Box 23**.
+3. **Go to Room 3** (where table 19 is located).
+4. **Search Table 19**.
+
+Here are the detailed actions:
+
+1. **Go to Door 16** (to traverse to Room 4):
+   - Goto action to reach the door.
+   - Traverse action to go through the door to Room 4.
+
+2. **Go to Box 23**:
+   - Goto action to reach Box 23.
+
+3. **Go to Door 0** (to traverse to Room 3):
+   - Goto action to reach the open connection.
+   - Traverse action to go through the open connection to Room 3.
+
+4. **Go to Table 19**:
+   - Goto action to reach Table 19.
+
+5. **Search Table 19**.
+
+Now, let's calculate the actions:
+
+1. **Go to Door 16**:
+   - Goto: {'x': 15.5, 'y': 7}, costs: 1.5 (assisted)
+   - Traverse: {'x': 15.5, 'y': 7}, costs: 30 (assisted)
+
+2. **Go to Box 23**:
+   - Goto: {'x': 17, 'y': 11}, costs: 2.236 (assisted)
+
+3. **Go to Door 0**:
+   - Goto: {'x': 9, 'y': 6.5}, costs: 6.5 (assisted)
+   - Traverse: {'x': 9, 'y': 6.5}, costs: 0 (assisted)
+
+4. **Go to Table 19**:
+   - Goto: {'x': 21.5, 'y': 6.5}, costs: 12.5 (assisted)
+
+5. **Search Table 19**:
+   - Search: {'x': 21.5, 'y': 6.5}, costs: 60 (assisted)
+
+Now, let's compile the actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 1.5, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 17, 'y': 11}, 'costs': 2.236, 'execution_mode': 'assisted', 'entity': {'entity_type': 'box', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 6.5, 'execution_mode': 'assisted', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 12.5, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+    {'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+]
+```
+
+This set of actions will allow the robot to complete the task of inspecting box 23 and searching table 19 in assisted mode.

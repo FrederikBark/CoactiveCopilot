@@ -1,0 +1,30 @@
+To go to the victim in room 4, follow these steps:
+
+    Traverse from Room 1 to Room 2 through Door 9:
+        Move to the door's position.
+        Traverse through the door.
+
+    Traverse from Room 2 to Room 3 through the open connection:
+        Move to the open connection's position.
+        Traverse through the open connection.
+
+    Traverse from Room 3 to Room 4 through Door 16:
+        Move to the door's position.
+        Traverse through the door.
+
+    Go to the center of Room 4:
+        Move to the center of Room 4 where the victim is located.
+
+Here is the optimal set of actions for the task:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 1.1180, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 5.8309, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 2}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.0282, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}}
+]

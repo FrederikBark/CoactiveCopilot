@@ -1,0 +1,8 @@
+search door 9
+
+
+ [{'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 1.4142, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'search', 'pose': {'x': 5.5, 'y': 4}, 'costs': 80, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}}]
+
+Explanation:
+The robot starts in room 1, so it doesn't need to traverse any doors or open connections. The closest point to door 9 is at (5.5, 4), so the robot will go there first. The cost of this action is 1.4142 (the Euclidean distance between the robot's starting position and the door). After reaching the door, the robot will search it, which costs 80 in teleop mode. The total cost of this set of actions is 81.4142.

@@ -1,0 +1,19 @@
+go to room 4
+
+
+To go to room 4, the robot must first traverse through room 1 to room 3 and then from room 3 to room 4. Here are the optimal actions:
+
+1. Traverse the open connection from room 1 to room 3.
+2. Traverse door 16 from room 3 to room 4.
+
+Here are the actions:
+
+Result: 
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+]
+```

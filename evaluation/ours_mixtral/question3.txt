@@ -1,0 +1,19 @@
+
+go to table 2
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'table', 'super_type': 'object', 'id': 2}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.184658527374268, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+]
+

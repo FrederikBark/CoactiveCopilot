@@ -1,0 +1,61 @@
+To go to room 4 while only traversing doors autonomously, follow these steps:
+
+    Go to Door 1 in Room 1: The robot starts at position (6.5, 12) and needs to go to Door 1 located at (6.5, 13).
+    Traverse Door 1 Autonomously: After reaching Door 1, the robot will traverse it autonomously, which will take it to an unknown room connected by Door 1.
+    Go to Room 3: Since Door 1 leads to an unknown room, the robot needs to check the available connections. The robot will need to go to Room 3, which is connected to Room 1 through an open connection.
+    Go to Door 16 in Room 3: From Room 3, the robot will then traverse Door 16 to get to Room 4.
+
+Here is the sequence of actions with the costs:
+
+    Go to Door 1 in Room 1
+        Action: goto
+        Pose: (6.5, 13)
+        Costs: euclidean distance=(6.5−6.5)2+(13−12)2=1euclidean distance=(6.5−6.5)2+(13−12)2
+
+    ​=1
+    Execution Mode: autonomous
+    Entity: Door 1
+
+Traverse Door 1 Autonomously
+
+    Action: traverse
+    Pose: (6.5, 13)
+    Costs: 40
+    Execution Mode: autonomous
+    Entity: Door 1
+
+Go to Room 3
+
+    Action: goto
+    Pose: (16, 6)
+    Costs: euclidean distance from (6.5, 13) to (16, 6)=(16−6.5)2+(6−13)2=10.5euclidean distance from (6.5, 13) to (16, 6)=(16−6.5)2+(6−13)2
+
+        ​=10.5
+        Execution Mode: autonomous
+        Entity: Room 3
+
+    Go to Door 16 in Room 3
+        Action: goto
+        Pose: (15.5, 7)
+        Costs: euclidean distance from (16, 6) to (15.5, 7)=1.5euclidean distance from (16, 6) to (15.5, 7)=1.5
+        Execution Mode: autonomous
+        Entity: Door 16
+
+    Traverse Door 16 Autonomously
+        Action: traverse
+        Pose: (15.5, 7)
+        Costs: 40
+        Execution Mode: autonomous
+        Entity: Door 16
+
+Here is the complete set of actions:
+
+json
+
+[
+  {'type': 'goto', 'pose': {'x': 6.5, 'y': 13}, 'costs': 1, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 1, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 6.5, 'y': 13}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 1, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 10.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 2}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}
+]

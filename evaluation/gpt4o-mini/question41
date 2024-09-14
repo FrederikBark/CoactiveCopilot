@@ -1,0 +1,54 @@
+search table 3 assisted
+
+
+To perform the task of searching table 3 in room 1, the robot must first go to the position of table 3, which is located at (0.5, 8). The robot is currently at (6.5, 12) in room 1. 
+
+Here are the optimal actions to fulfill the task:
+
+1. **Go to Table 3**: The robot will move from its current position to the position of table 3.
+2. **Search Table 3**: Once at the table, the robot will perform the search action.
+
+Now, let's calculate the costs and create the action set:
+
+1. **Goto Table 3**:
+   - Position: (0.5, 8)
+   - Cost: Euclidean distance from (6.5, 12) to (0.5, 8) = √((6.5 - 0.5)² + (12 - 8)²) = √(36 + 16) = √52 ≈ 7.2111
+   - Execution Mode: Autonomous (preferred mode)
+   - Entity: Table 3
+
+2. **Search Table 3**:
+   - Cost: 60 (assisted)
+   - Execution Mode: Assisted
+   - Entity: Table 3
+
+Now, let's compile the actions:
+
+Result:
+```json
+[
+    {
+        "type": "goto",
+        "pose": {"x": 0.5, "y": 8},
+        "costs": 7.2111,
+        "execution_mode": "autonomous",
+        "entity": {
+            "entity_type": "table",
+            "entity_super_type": "object",
+            "id": 3,
+            "parent_id": 1
+        }
+    },
+    {
+        "type": "search",
+        "pose": {"x": 0.5, "y": 8},
+        "costs": 60,
+        "execution_mode": "assisted",
+        "entity": {
+            "entity_type": "table",
+            "entity_super_type": "object",
+            "id": 3,
+            "parent_id": 1
+        }
+    }
+]
+```

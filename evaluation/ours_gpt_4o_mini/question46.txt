@@ -1,0 +1,18 @@
+
+inspect box 23, but don’t use door 16
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'container', 'super_type': 'object', 'id': 23}},
+]
+
+constraints: [
+  {'constraint': 'disallow_entity', 'entity': {'type': 'door', 'super_type': 'object', 'id': 16}},
+]
+
+
+
+actions: [
+]
+

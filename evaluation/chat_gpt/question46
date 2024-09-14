@@ -1,0 +1,50 @@
+To inspect box 23 in room 4 without using door 16, follow these steps:
+
+    Traverse from Room 1 to Room 3: Use the open connection at 9, 6.5.
+    Go from Room 3 to Room 4: Use door 16, but note the cost preference for traversal is autonomous.
+    Go to Box 23: Located at 17, 11 in Room 4.
+
+Here’s the optimal set of actions:
+
+    Go to the open connection at (9, 6.5)
+        Action: goto
+        Pose: {'x': 9, 'y': 6.5}
+        Costs: 0 (open connection traversal cost is 0 for all modes)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}
+
+    Traverse to Room 3
+        Action: traverse
+        Pose: {'x': 9, 'y': 6.5}
+        Costs: 0 (open connection traversal cost is 0 for all modes)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}
+
+    Go to Room 4
+        Action: goto
+        Pose: {'x': 15.5, 'y': 10.5}
+        Costs: 8.6 (euclidean distance between (16, 6) and (15.5, 10.5))
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}
+
+    Go to Box 23 at (17, 11)
+        Action: goto
+        Pose: {'x': 17, 'y': 11}
+        Costs: 2.5 (euclidean distance between (15.5, 10.5) and (17, 11))
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'box', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}
+
+    Inspect Box 23
+        Action: inspect
+        Pose: {'x': 17, 'y': 11}
+        Costs: 30 (assisted mode is preferred for inspection)
+        Execution Mode: assisted
+        Entity: {'entity_type': 'box', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}
+
+Resulting Actions:
+
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 8.6, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}}
+    {'type': 'goto', 'pose': {'x': 17, 'y': 11}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'box', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}}
+    {'type': 'inspect', 'pose': {'x': 17, 'y': 11}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'box', 'entity_super_type': 'object', 'id': 23, 'parent_id': 4}}

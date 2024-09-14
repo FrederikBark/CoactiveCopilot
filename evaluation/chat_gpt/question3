@@ -1,0 +1,18 @@
+To go to table 2 from the starting position at 6.5, 12 in room 1, follow these steps:
+
+    Move to Table 2: Calculate the cost to move directly to table 2 located at 0.5, 10.5 in room 1.
+
+Here’s the optimal set of actions:
+
+    Goto Table 2:
+        Type: goto
+        Pose: {'x': 0.5, 'y': 10.5}
+        Costs: 6.3246 (Euclidean distance from 6.5, 12 to 0.5, 10.5)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}
+
+json
+
+[{'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.3246, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}}]
+
+

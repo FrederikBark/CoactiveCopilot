@@ -1,0 +1,19 @@
+
+go to the victim in room 1
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'victim', 'super_type': 'object', 'location': 'room 1'}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+
+Copilot: I'm sorry, but there is no matching {'type': 'victim', 'super_type': 'object', 'location': 'room 1'} known to me. What should I do?'

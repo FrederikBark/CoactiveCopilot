@@ -1,0 +1,33 @@
+To inspect shelf 24 in room 4 while avoiding the use of assisted functions, follow these steps:
+
+    Traverse from room 1 to room 3: The robot is initially in room 1 and needs to get to room 3 first, using the open connection.
+    Traverse from room 3 to room 4: Next, the robot needs to traverse from room 3 to room 4 using door 16.
+    Go to shelf 24 in room 4: Finally, the robot should go to the location of shelf 24 and inspect it.
+
+Here is the optimal set of actions:
+
+    Traverse to room 3:
+        goto to the open connection in room 1 at 9, 6.5 (position: 9, 6.5)
+        traverse to room 3 (execution_mode: autonomous)
+
+    Traverse to room 4:
+        goto to door 16 in room 3 at 15.5, 7 (position: 15.5, 7)
+        traverse to room 4 (execution_mode: autonomous)
+
+    Inspect shelf 24:
+        goto to shelf 24 in room 4 at 15.5, 12.5 (position: 15.5, 12.5)
+        inspect shelf 24 (execution_mode: autonomous)
+
+The final set of actions is:
+
+json
+
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 5.8309, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+    {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 35, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+]
+

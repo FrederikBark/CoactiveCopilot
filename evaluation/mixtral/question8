@@ -1,0 +1,18 @@
+go to shelf 6
+
+
+ To complete the task of "go to shelf 6" in the given scenario, the optimal set of actions for the robot would be:
+
+[
+{'type': 'goto', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 12.5, 'y': 6.5}, 'costs': 10.6066, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 6, 'parent_id': 2}}
+]
+
+Explanation:
+
+1. The robot starts in room 1 and needs to go to shelf 6 which is in room 2. The robot first goes to door 9 to traverse to room 2.
+2. The robot then traverses door 9 in assisted mode to reach room 2.
+3. Finally, the robot goes to shelf 6 in room 2 in autonomous mode.
+
+Note: The costs are calculated based on the Euclidean distance between the current position and the target position. The costs for traversing a door are 30 for assisted mode, as specified in the scenario.

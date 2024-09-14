@@ -1,0 +1,19 @@
+
+measure hazards on table 2
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'measure_hazard', 'entity': {'type': 'table', 'super_type': 'object', 'id': 2}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.184658527374268, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+  {'type': 'measure_hazard', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+]
+

@@ -1,0 +1,95 @@
+The task is to go to room 2 and search table 12. The robot starts in room 1 at the position (6.5, 12).
+
+Here's the optimal set of actions:
+
+    Go to door 9 at (5.5, 4) to traverse to room 2
+    The robot needs to move from its current position to the door connecting room 1 and room 2. The Euclidean distance from (6.5, 12) to (5.5, 4) is calculated using the formula:
+    d=(6.5−5.5)2+(12−4)2=1+64=65≈8.06
+    d=(6.5−5.5)2+(12−4)2
+
+​=1+64
+​=65
+​≈8.06
+
+    Costs: 8.06 (autonomous)
+
+Traverse door 9 to enter room 2
+The robot needs to traverse the door, and it will be done in the assisted mode because it has lower costs than autonomous.
+
+    Costs: 30 (assisted)
+
+Go to table 12 at (9.5, 2) in room 2
+Once in room 2, the robot moves to the location of table 12. The Euclidean distance from (5.5, 4) to (9.5, 2) is calculated as:
+d=(9.5−5.5)2+(2−4)2=16+4=20≈4.47
+d=(9.5−5.5)2+(2−4)2
+​=16+4
+​=20
+
+    ​≈4.47
+        Costs: 4.47 (autonomous)
+
+    Search table 12
+    The robot searches table 12. Since searching has the same cost for all tables, it will use the assisted mode because it is the most cost-effective.
+        Costs: 60 (assisted)
+
+Final Set of Actions:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 5.5, "y": 4},
+    "costs": 8.06,
+    "execution_mode": "autonomous",
+    "entity": {
+      "entity_type": "door",
+      "entity_super_type": "object",
+      "id": 9,
+      "parent_id": 1
+    }
+  },
+  {
+    "type": "traverse",
+    "pose": {"x": 5.5, "y": 4},
+    "costs": 30,
+    "execution_mode": "assisted",
+    "entity": {
+      "entity_type": "door",
+      "entity_super_type": "object",
+      "id": 9,
+      "parent_id": 2
+    }
+  },
+  {
+    "type": "goto",
+    "pose": {"x": 9.5, "y": 2},
+    "costs": 4.47,
+    "execution_mode": "autonomous",
+    "entity": {
+      "entity_type": "table",
+      "entity_super_type": "object",
+      "id": 12,
+      "parent_id": 2
+    }
+  },
+  {
+    "type": "search",
+    "pose": {"x": 9.5, "y": 2},
+    "costs": 60,
+    "execution_mode": "assisted",
+    "entity": {
+      "entity_type": "table",
+      "entity_super_type": "object",
+      "id": 12,
+      "parent_id": 2
+    }
+  }
+]
+
+Total Costs:
+
+The total cost is:
+8.06 (goto door 9)+30 (traverse door 9)+4.47 (goto table 12)+60 (search table 12)=102.53
+8.06(goto door 9)+30(traverse door 9)+4.47(goto table 12)+60(search table 12)=102.53
+

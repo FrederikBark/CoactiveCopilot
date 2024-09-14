@@ -1,0 +1,10 @@
+go to room 4, communicate with victim 20
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 12}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+ {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 10.630, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'connection', 'id': 0, 'parent_id': 1}},
+ {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 12.247, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+ {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+ {'type': 'goto', 'pose': {'x': 15.5, 10.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}},
+ {'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 7.810, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+ {'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}]

@@ -1,0 +1,11 @@
+inspect box 23, search table 19. Do everything assisted
+
+
+ [
+{'type': 'goto', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 7.5}, 'costs': 18.0278, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 23, 'parent_id': 2}},
+{'type': 'inspect', 'pose': {'x': 15.5, 'y': 7.5}, 'costs': 35, 'execution_mode': 'assisted', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 23, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 10.3028, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+{'type': 'search', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}
+]

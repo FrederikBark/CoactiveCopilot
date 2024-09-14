@@ -1,0 +1,19 @@
+
+inspect shelf 4
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'shelf', 'super_type': 'object', 'id': 4}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 2.0, 'y': 4.5}, 'costs': 8.746427536010742, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 4, 'parent_id': 1}},
+  {'type': 'inspect', 'pose': {'x': 2.0, 'y': 4.5}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 4, 'parent_id': 1}},
+]
+

@@ -1,0 +1,7 @@
+go to table 19
+
+
+Result: [{'type': 'goto', 'pose': {'x': 6.5, 'y': 13}, 'costs': 1.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 13}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 1, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 10.63014581273465, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}},
+{'type': 'goto', 'pose': {'x': 21.5, 'y': 6.5}, 'costs': 5.830951894845301, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 19, 'parent_id': 3}}]

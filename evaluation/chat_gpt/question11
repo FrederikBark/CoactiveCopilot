@@ -1,0 +1,52 @@
+To go to cabinet 10 in Room 2, the robot needs to traverse from Room 1 to Room 2 via Door 9 at position (5.5, 4). The robot starts at position (6.5, 12) in Room 1. Here is the optimal set of actions to complete the task:
+
+json
+
+[
+    {
+        'type': 'goto',
+        'pose': {'x': 5.5, 'y': 4},
+        'costs': 8.0554,
+        'execution_mode': 'autonomous',
+        'entity': {
+            'entity_type': 'door',
+            'entity_super_type': 'object',
+            'id': 9,
+            'parent_id': 1
+        }
+    },
+    {
+        'type': 'traverse',
+        'pose': {'x': 5.5, 'y': 4},
+        'costs': 20,
+        'execution_mode': 'teleop',
+        'entity': {
+            'entity_type': 'door',
+            'entity_super_type': 'object',
+            'id': 9,
+            'parent_id': 2
+        }
+    },
+    {
+        'type': 'goto',
+        'pose': {'x': 4.5, 'y': 3.5},
+        'costs': 1.118,
+        'execution_mode': 'autonomous',
+        'entity': {
+            'entity_type': 'cupboard',
+            'entity_super_type': 'object',
+            'id': 10,
+            'parent_id': 2
+        }
+    }
+]
+
+Explanation:
+
+    Goto Door 9: The robot moves from its starting position (6.5, 12) in Room 1 to Door 9 at position (5.5, 4). The cost for this movement is the Euclidean distance of approximately 8.0554 units.
+
+    Traverse Door 9: The robot traverses through Door 9 to enter Room 2. Since this task requires a more careful approach, the traversal is done in teleoperated mode, costing 20 units.
+
+    Goto Cabinet 10: Once in Room 2, the robot moves to the position of Cabinet 10 at (4.5, 3.5). The cost for this movement is the Euclidean distance of approximately 1.118 units.
+
+This sequence of actions effectively fulfills the task of going to Cabinet 10.

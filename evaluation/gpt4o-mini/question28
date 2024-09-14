@@ -1,0 +1,95 @@
+communicate with victim 20 and victim 21
+
+
+To communicate with both victims, the robot must first go to their respective positions in rooms 3 and 4. Here are the optimal actions to achieve this:
+
+1. Go to victim 20 in room 3.
+2. Communicate with victim 20.
+3. Traverse from room 3 to room 4.
+4. Go to victim 21 in room 4.
+5. Communicate with victim 21.
+
+Now, let's break down the actions:
+
+1. **Go to victim 20**:
+   - The robot needs to traverse the open connection from room 1 to room 3 first.
+   - Then, it will go to the position of victim 20.
+
+2. **Communicate with victim 20**:
+   - This action can only be done teleoperated.
+
+3. **Traverse to room 4**:
+   - The robot will traverse the door from room 3 to room 4.
+
+4. **Go to victim 21**:
+   - The robot will go to the position of victim 21.
+
+5. **Communicate with victim 21**:
+   - This action can also only be done teleoperated.
+
+Now, let's compile the actions:
+
+1. **Go to the open connection to room 3**:
+   - Goto action to the open connection at (9, 6.5).
+   
+2. **Traverse to room 3**:
+   - Traverse action to room 3.
+
+3. **Go to victim 20**:
+   - Goto action to victim 20 at (19.5, 12.5).
+
+4. **Communicate with victim 20**:
+   - Communicate action with victim 20.
+
+5. **Go to the door to room 4**:
+   - Goto action to the door at (15.5, 7).
+
+6. **Traverse to room 4**:
+   - Traverse action to room 4.
+
+7. **Go to victim 21**:
+   - Goto action to victim 21 at (14, 9).
+
+8. **Communicate with victim 21**:
+   - Communicate action with victim 21.
+
+Now, let's calculate the costs and compile the final actions:
+
+1. **Goto open connection**:
+   - Action: `{'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}}`
+
+2. **Traverse to room 3**:
+   - Action: `{'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}`
+
+3. **Goto victim 20**:
+   - Action: `{'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 10.63014581273465, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}`
+
+4. **Communicate with victim 20**:
+   - Action: `{'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}`
+
+5. **Goto door to room 4**:
+   - Action: `{'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 4.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}}`
+
+6. **Traverse to room 4**:
+   - Action: `{'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}}`
+
+7. **Goto victim 21**:
+   - Action: `{'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}`
+
+8. **Communicate with victim 21**:
+   - Action: `{'type': 'communicate', 'pose': {'x': 14, 'y': 9}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}`
+
+Now, let's compile all actions into a single list:
+
+```json
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 10.63014581273465, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+  {'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 4.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}},
+  {'type': 'communicate', 'pose': {'x': 14, 'y': 9}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+]
+```

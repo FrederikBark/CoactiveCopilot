@@ -1,0 +1,73 @@
+To go to Room 4 from Room 1, follow these steps:
+
+    Traverse Door 9: First, you need to traverse the door that connects Room 1 to Room 2. This door is located at 5.5, 4.
+
+    Traverse Open Connection: Room 2 is connected to Room 3 through an open connection. The open connection is at 9, 6.5.
+
+    Traverse Door 16: Finally, traverse the door that connects Room 3 to Room 4. This door is located at 15.5, 7.
+
+Here are the actions in detail:
+
+    Go to Door 9
+        Type: goto
+        Pose: {'x': 5.5, 'y': 4}
+        Costs: 5.5 (Euclidean distance from starting position 6.5, 12)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}
+
+    Traverse Door 9
+        Type: traverse
+        Pose: {'x': 5.5, 'y': 4}
+        Costs: 20 (Teleop cost for traversing the door)
+        Execution Mode: teleop
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}
+
+    Go to Open Connection
+        Type: goto
+        Pose: {'x': 9, 'y': 6.5}
+        Costs: 2.8284 (Euclidean distance from 5.5, 4 to 9, 6.5)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}
+
+    Traverse Open Connection
+        Type: traverse
+        Pose: {'x': 9, 'y': 6.5}
+        Costs: 0 (Traversal of open connection is free for all modes)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 4}
+
+    Go to Door 16
+        Type: goto
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 6.8 (Euclidean distance from 9, 6.5 to 15.5, 7)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}
+
+    Traverse Door 16
+        Type: traverse
+        Pose: {'x': 15.5, 'y': 7}
+        Costs: 20 (Teleop cost for traversing the door)
+        Execution Mode: teleop
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}
+
+    Go to Room 4
+        Type: goto
+        Pose: {'x': 15.5, 'y': 10.5}
+        Costs: 3.5 (Euclidean distance from 15.5, 7 to center of Room 4 at 15.5, 10.5)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}
+
+Here is the optimal set of actions:
+
+json
+
+[
+    {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.8, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}}
+]
+

@@ -1,0 +1,20 @@
+
+Inspect table 2 teleoperated
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'table', 'super_type': 'object', 'id': 2}},
+]
+
+constraints: [
+  {'constraint': 'disallow_modes', 'modes': ['autonomous', 'assisted']},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.184658527374268, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+  {'type': 'inspect', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 40.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}},
+]
+

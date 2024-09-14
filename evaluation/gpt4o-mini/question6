@@ -1,0 +1,18 @@
+go to the shelf in room 3
+
+
+To reach the shelf in room 3, the robot must first traverse the open connection from room 1 to room 3. Here are the optimal actions:
+
+1. Go to the open connection at (9, 6.5) to traverse to room 3.
+2. Traverse the open connection to room 3.
+3. Go to the shelf at (19, 4.5) in room 3.
+
+Here is the set of actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 10.63014581273465, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}}
+]
+```

@@ -1,0 +1,16 @@
+go to room 3. Don't use door 9
+
+
+To go to room 3 without using door 9, the robot can traverse the open connection from room 1 to room 3. Here are the optimal actions:
+
+1. **Go to the open connection at (9, 6.5)**.
+2. **Traverse the open connection to room 3**.
+
+Here is the set of actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}}
+]
+```

@@ -1,0 +1,16 @@
+go to room 4, but only traverse doors autonomous
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 4.08, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6.5, 'y': 5.5}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 7.5}, 'costs': 15.5885, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}}]
+
+Explanation:
+1. The robot starts at (6.5, 12) in room 1.
+2. To go to room 4, the robot first needs to traverse door 9 to reach room 2.
+3. The lowest-cost option for traversing door 9 is in autonomous mode, which costs 40.
+4. After traversing door 9, the robot will be at (5.5, 4), which is in room 2.
+5. From room 2, the robot needs to traverse door 16 to reach room 4.
+6. The lowest-cost option for traversing door 16 is in autonomous mode, which costs 40.
+7. After traversing door 16, the robot will be at (15.5, 7.5), which is in room 4.
+8. The total cost for this sequence of actions is 4.08 (goto door 9) + 40 (traverse door 9) + 15.5885 (goto room 4 center) = 59.6685.

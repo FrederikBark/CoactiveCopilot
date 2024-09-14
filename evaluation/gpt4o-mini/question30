@@ -1,0 +1,93 @@
+inspect shelf 24 after inspecting shelf 17
+
+
+To perform the task of inspecting shelf 24 after inspecting shelf 17, the robot will need to navigate through the rooms and traverse the necessary connections. Here is the optimal set of actions:
+
+1. **Go to shelf 17 in room 3**:
+   - The robot will first need to traverse the open connection to room 3.
+   - Then, it will go to shelf 17.
+
+2. **Inspect shelf 17**:
+   - After reaching shelf 17, the robot will inspect it.
+
+3. **Go to room 4**:
+   - The robot will then need to traverse the door to room 4.
+
+4. **Go to shelf 24 in room 4**:
+   - After entering room 4, the robot will go to shelf 24.
+
+5. **Inspect shelf 24**:
+   - Finally, the robot will inspect shelf 24.
+
+Now, let's break down the actions with their respective costs:
+
+1. **Go to the open connection to room 3**:
+   - Action: `goto`
+   - Pose: `{x: 9, y: 6.5}`
+   - Costs: `2.5` (distance from {6.5, 12} to {9, 6.5})
+   - Execution mode: `autonomous`
+   - Entity: `{entity_type: 'open connection', entity_super_type: 'object', id: 0, parent_id: 1}`
+
+2. **Traverse to room 3**:
+   - Action: `traverse`
+   - Pose: `{x: 9, y: 6.5}`
+   - Costs: `0.0` (open connection)
+   - Execution mode: `autonomous`
+   - Entity: `{entity_type: 'open connection', entity_super_type: 'object', id: 0, parent_id: 3}`
+
+3. **Go to shelf 17**:
+   - Action: `goto`
+   - Pose: `{x: 19, y: 4.5}`
+   - Costs: `10.63014581273465` (distance from {9, 6.5} to {19, 4.5})
+   - Execution mode: `autonomous`
+   - Entity: `{entity_type: 'shelf', entity_super_type: 'object', id: 17, parent_id: 3}`
+
+4. **Inspect shelf 17**:
+   - Action: `inspect`
+   - Pose: `{x: 19, y: 4.5}`
+   - Costs: `30.0` (assisted)
+   - Execution mode: `assisted`
+   - Entity: `{entity_type: 'shelf', entity_super_type: 'object', id: 17, parent_id: 3}`
+
+5. **Go to room 4**:
+   - Action: `goto`
+   - Pose: `{x: 15.5, y: 7}`
+   - Costs: `3.1622776601683795` (distance from {19, 4.5} to {15.5, 7})
+   - Execution mode: `autonomous`
+   - Entity: `{entity_type: 'door', entity_super_type: 'object', id: 16, parent_id: 3}`
+
+6. **Traverse to room 4**:
+   - Action: `traverse`
+   - Pose: `{x: 15.5, y: 7}`
+   - Costs: `20.0` (teleop)
+   - Execution mode: `teleop`
+   - Entity: `{entity_type: 'door', entity_super_type: 'object', id: 16, parent_id: 4}`
+
+7. **Go to shelf 24**:
+   - Action: `goto`
+   - Pose: `{x: 15.5, y: 12.5}`
+   - Costs: `5.5` (distance from {15.5, 7} to {15.5, 12.5})
+   - Execution mode: `autonomous`
+   - Entity: `{entity_type: 'shelf', entity_super_type: 'object', id: 24, parent_id: 4}`
+
+8. **Inspect shelf 24**:
+   - Action: `inspect`
+   - Pose: `{x: 15.5, y: 12.5}`
+   - Costs: `30.0` (assisted)
+   - Execution mode: `assisted`
+   - Entity: `{entity_type: 'shelf', entity_super_type: 'object', id: 24, parent_id: 4}`
+
+Now, let's compile these actions into a single result:
+
+```json
+[
+  {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 10.63014581273465, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+  {'type': 'inspect', 'pose': {'x': 19, 'y': 4.5}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 3.1622776601683795, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 20.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 5.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+  {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30.0, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+]
+```

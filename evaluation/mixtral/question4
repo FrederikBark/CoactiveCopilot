@@ -1,0 +1,5 @@
+go to table 19
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 9}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+ {'type': 'goto', 'pose': {'x': 0.5, 'y': 8}, 'costs': 7.211, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}}]

@@ -1,0 +1,75 @@
+To get to the person (victim 21) in Room 4, the robot must traverse from Room 1 to Room 3 via the open connection, then traverse Door 16 to enter Room 4, and finally move to the position of the victim in Room 4. Here's the optimal set of actions with the lowest combined cost:
+
+    Goto the open connection between Room 1 and Room 3 at (9, 6.5).
+        Pose: (9, 6.5)
+        Costs: 3.0414 (autonomous)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}
+
+    Traverse the open connection to enter Room 3.
+        Pose: (9, 6.5)
+        Costs: 0.0 (autonomous)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}
+
+    Goto Door 16 at (15.5, 7) in Room 3.
+        Pose: (15.5, 7)
+        Costs: 6.5192 (autonomous)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}
+
+    Traverse Door 16 to enter Room 4.
+        Pose: (15.5, 7)
+        Costs: 40.0 (autonomous)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}
+
+    Goto the victim at (14, 9) in Room 4.
+        Pose: (14, 9)
+        Costs: 1.8028 (autonomous)
+        Execution Mode: autonomous
+        Entity: {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}
+
+Here is the complete action set:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 9, "y": 6.5},
+    "costs": 3.0414,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "open_connection", "entity_super_type": "object", "id": 0, "parent_id": 1}
+  },
+  {
+    "type": "traverse",
+    "pose": {"x": 9, "y": 6.5},
+    "costs": 0.0,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "open_connection", "entity_super_type": "object", "id": 0, "parent_id": 3}
+  },
+  {
+    "type": "goto",
+    "pose": {"x": 15.5, "y": 7},
+    "costs": 6.5192,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "door", "entity_super_type": "object", "id": 16, "parent_id": 3}
+  },
+  {
+    "type": "traverse",
+    "pose": {"x": 15.5, "y": 7},
+    "costs": 40.0,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "door", "entity_super_type": "object", "id": 16, "parent_id": 4}
+  },
+  {
+    "type": "goto",
+    "pose": {"x": 14, "y": 9},
+    "costs": 1.8028,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "victim", "entity_super_type": "object", "id": 21, "parent_id": 4}
+  }
+]
+
+The robot successfully reaches the victim in Room 4 with a total cost of 51.3634.

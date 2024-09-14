@@ -1,0 +1,10 @@
+inspect the shelf in room 4. Also communicate with victim 21
+
+
+ [
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 12.2474, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 3}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 1.4142, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+{'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+{'type': 'goto', 'pose': {'x': 14, 'y': 9}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}},
+{'type': 'communicate', 'pose': {'x': 14, 'y': 9}, 'costs': 60, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}}
+]

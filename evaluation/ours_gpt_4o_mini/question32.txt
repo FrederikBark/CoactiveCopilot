@@ -1,0 +1,18 @@
+
+go to room 2, but don’t use door 9
+
+
+
+tasks: [
+  {'task': 'goto', 'entity': {'type': 'room', 'super_type': 'room', 'id': 2}},
+]
+
+constraints: [
+  {'constraint': 'disallow_entity_affordance', 'affordance_type': 'traverse', 'entity': {'type': 'door', 'super_type': 'object', 'id': 9}},
+]
+
+
+
+actions: [
+]
+

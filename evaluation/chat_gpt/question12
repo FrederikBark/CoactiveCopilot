@@ -1,0 +1,73 @@
+Here’s the optimal set of actions for the robot to inspect shelf 4 in Room 1, starting from its initial position at (6.5, 12) in Room 1:
+Task: Inspect Shelf 4 in Room 1
+
+    Go to Shelf 4:
+        Action Type: goto
+        Pose: {'x': 2, 'y': 4.5}
+        Costs: 5.4083 (Euclidean distance from (6.5, 12) to (2, 4.5))
+        Execution Mode: autonomous
+        Entity:
+
+        json
+
+    {
+      "entity_type": "shelf",
+      "entity_super_type": "object",
+      "id": 4,
+      "parent_id": 1
+    }
+
+Inspect Shelf 4:
+
+    Action Type: inspect
+    Pose: {'x': 2, 'y': 4.5}
+    Costs: 30
+    Execution Mode: assisted
+    Entity:
+
+    json
+
+        {
+          "entity_type": "shelf",
+          "entity_super_type": "object",
+          "id": 4,
+          "parent_id": 1
+        }
+
+Result:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 2, "y": 4.5},
+    "costs": 5.4083,
+    "execution_mode": "autonomous",
+    "entity": {
+      "entity_type": "shelf",
+      "entity_super_type": "object",
+      "id": 4,
+      "parent_id": 1
+    }
+  },
+  {
+    "type": "inspect",
+    "pose": {"x": 2, "y": 4.5},
+    "costs": 30,
+    "execution_mode": "assisted",
+    "entity": {
+      "entity_type": "shelf",
+      "entity_super_type": "object",
+      "id": 4,
+      "parent_id": 1
+    }
+  }
+]
+
+Explanation:
+
+    The robot moves autonomously from its initial position (6.5, 12) to the shelf's position (2, 4.5) in Room 1 with a cost of 5.4083 units.
+    Once at the shelf, the robot inspects it using the assisted mode, which is the least costly at 30 units.
+
+

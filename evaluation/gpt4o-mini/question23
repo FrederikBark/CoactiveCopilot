@@ -1,0 +1,43 @@
+go to room 2 and search table 12
+
+
+To go to room 2 and search table 12, the robot will need to traverse door 9 to reach room 2, and then go to table 12. Here are the optimal actions:
+
+1. **Go to door 9** (to traverse to room 2)
+2. **Traverse door 9** (to enter room 2)
+3. **Go to table 12** (to search it)
+
+Now, let's calculate the actions:
+
+1. **Go to door 9**:
+   - Position: (5.5, 4)
+   - Cost: Euclidean distance from (6.5, 12) to (5.5, 4) = √((5.5-6.5)² + (4-12)²) = √(1 + 64) = √65 ≈ 8.0623
+   - Execution mode: Autonomous
+   - Entity: Door 9
+
+2. **Traverse door 9**:
+   - Position: (5.5, 4)
+   - Cost: 40 (autonomous)
+   - Entity: Door 9
+
+3. **Go to table 12**:
+   - Position: (9.5, 2)
+   - Cost: Euclidean distance from (7, 3) to (9.5, 2) = √((9.5-7)² + (2-3)²) = √(6.25 + 1) = √7.25 ≈ 2.6928
+   - Execution mode: Autonomous
+   - Entity: Table 12
+
+4. **Search table 12**:
+   - Position: (9.5, 2)
+   - Cost: 60 (assisted)
+   - Entity: Table 12
+
+Now, let's compile the actions:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 8.0623, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+    {'type': 'goto', 'pose': {'x': 9.5, 'y': 2}, 'costs': 2.6928, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 12, 'parent_id': 2}},
+    {'type': 'search', 'pose': {'x': 9.5, 'y': 2}, 'costs': 60, 'execution_mode': 'assisted', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 12, 'parent_id': 2}}
+]
+```

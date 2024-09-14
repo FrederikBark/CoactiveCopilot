@@ -1,0 +1,12 @@
+inspect box 6, but don't use door 16
+
+
+ To inspect box 6 without using door 16, the robot can follow this set of actions:
+
+1. Inspect box 6 in room 1:
+[
+{'type': 'goto', 'pose': {'x': 12.5, 'y': 10.5}, 'costs': 3.6056, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 6, 'parent_id': 1}},
+{'type': 'inspect', 'pose': {'x': 12.5, 'y': 10.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'container', 'entity_super_type': 'object', 'id': 6, 'parent_id': 1}}
+]
+
+The robot will move to box 6 and inspect it in assisted mode. The total cost of this action set is 3.6056 (movement) + 30 (inspection) = 33.6056.

@@ -1,0 +1,17 @@
+
+clean table 19
+
+
+
+tasks: [
+]
+
+constraints: [
+]
+
+
+
+actions: [
+]
+
+Copilot: Sorry, but I am not capable to clean table. I can only ['goto', 'search', 'traverse', 'inspect', 'measure_hazard', 'communicate']. Can you specify a different interaction for this step, should this step of the plan be canceled, or do you wan't to replan from the beginning?

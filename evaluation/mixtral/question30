@@ -1,0 +1,9 @@
+inspect shelf 24 after inspecting shelf 17
+
+
+ [
+{'type': 'goto', 'pose': {'x': 19, 'y': 4.5}, 'costs': 7.0711, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+{'type': 'inspect', 'pose': {'x': 19, 'y': 4.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 17, 'parent_id': 3}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 10.9545, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+{'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 30, 'execution_mode': 'assisted', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}}
+]

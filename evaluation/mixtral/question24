@@ -1,0 +1,7 @@
+go to room 2, go to room 3, go to room 4
+
+
+ [{'type': 'goto', 'pose': {'x': 6, 'y': 4}, 'costs': 1.4142, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+{'type': 'traverse', 'pose': {'x': 6, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+{'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 15.8114, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}},
+{'type': 'goto', 'pose': {'x': 15.5, 'y': 10.5}, 'costs': 10.3054, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 4, 'parent_id': 4}}]

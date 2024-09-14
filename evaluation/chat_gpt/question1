@@ -1,0 +1,35 @@
+To go to Room 2 from Room 1, follow these steps:
+
+    Go to Door 9: Since Room 1 is connected to Room 2 by Door 9 at 5.5, 4, the robot needs to move to this door first.
+
+    Traverse Door 9: After reaching Door 9, the robot will traverse it to enter Room 2.
+
+Here’s the optimal set of actions to accomplish this:
+
+    Goto Door 9
+        Pose: {x: 5.5, y: 4}
+        Cost: 2.8284 (distance from initial position {x: 6.5, y: 12} to {x: 5.5, y: 4})
+        Execution Mode: Autonomous
+        Entity: Door 9, Room 1
+
+    Traverse Door 9
+        Pose: {x: 5.5, y: 4}
+        Cost: 20 (teleop mode for traversing the door)
+        Execution Mode: Teleop
+        Entity: Door 9, Room 1
+
+    Goto Room 2 Center
+        Pose: {x: 7, y: 3}
+        Cost: 1.5 (distance from Door 9 to Room 2 center {x: 7, y: 3})
+        Execution Mode: Autonomous
+        Entity: Room 2
+
+Combining these actions, the final result is:
+
+json
+
+[
+    {'type': 'goto', 'pose': {'x': 5.5, 'y': 4}, 'costs': 2.8284, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 5.5, 'y': 4}, 'costs': 20, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 9, 'parent_id': 2}},
+    {'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 1.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}}
+]

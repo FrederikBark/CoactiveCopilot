@@ -1,0 +1,24 @@
+
+inspect shelf 24 but don’t use assisted functions
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'inspect', 'entity': {'type': 'shelf', 'super_type': 'object', 'id': 24}},
+]
+
+constraints: [
+  {'constraint': 'disallow_modes', 'modes': ['assisted']},
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 9.0, 'y': 6.5}, 'costs': 6.041522979736328, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 11.0, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 7.0}, 'costs': 4.527692794799805, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 3}},
+  {'type': 'traverse', 'pose': {'x': 15.5, 'y': 9.0}, 'costs': 20.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'door_connection', 'entity_super_type': 'Connection', 'id': 3, 'parent_id': 4}},
+  {'type': 'goto', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+  {'type': 'inspect', 'pose': {'x': 15.5, 'y': 12.5}, 'costs': 35.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 24, 'parent_id': 4}},
+]
+

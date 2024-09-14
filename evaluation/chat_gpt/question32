@@ -1,0 +1,45 @@
+To go from Room 1 to Room 2 without using Door 9, we will need to traverse through Room 3 using the open connection between Room 1 and Room 3 and then use Door 16 to reach Room 4. Here’s the optimal set of actions:
+
+    Go to the open connection between Room 1 and Room 3.
+        Pose: {x: 9, y: 6.5}
+        Cost: 3.5
+        Execution Mode: Autonomous
+        Entity: {entity_type: 'open_connection', entity_super_type: 'object', id: 0, parent_id: 1}
+
+    Traverse the open connection to Room 3.
+        Pose: {x: 9, y: 6.5}
+        Cost: 0
+        Execution Mode: Autonomous
+        Entity: {entity_type: 'open_connection', entity_super_type: 'object', id: 0, parent_id: 3}
+
+    Go to Door 16 in Room 3.
+        Pose: {x: 15.5, y: 7}
+        Cost: 6.6
+        Execution Mode: Autonomous
+        Entity: {entity_type: 'door', entity_super_type: 'object', id: 16, parent_id: 3}
+
+    Traverse Door 16 to Room 4.
+        Pose: {x: 15.5, y: 7}
+        Cost: 40
+        Execution Mode: Autonomous
+        Entity: {entity_type: 'door', entity_super_type: 'object', id: 16, parent_id: 4}
+
+    Go to Room 2 from Room 4.
+        Pose: {x: 7, y: 3}
+        Cost: 15.8
+        Execution Mode: Autonomous
+        Entity: {entity_type: 'room', entity_super_type: 'room', id: 2, parent_id: 2}
+
+Complete Action Set:
+
+json
+
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 3.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 15.5, 'y': 7}, 'costs': 6.6, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}},
+    {'type': 'traverse', 'pose': {'x': 15.5, 'y': 7}, 'costs': 40, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}},
+    {'type': 'goto', 'pose': {'x': 7, 'y': 3}, 'costs': 15.8, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 2, 'parent_id': 2}}
+]
+
+

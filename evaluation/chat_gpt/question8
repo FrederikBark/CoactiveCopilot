@@ -1,0 +1,28 @@
+To go to shelf 6, which is located at position 12.5, 10.5 in room 1, here is the optimal set of actions needed:
+
+    Move from the current position (6.5, 12) to the position of shelf 6 (12.5, 10.5) in room 1.
+
+The steps are as follows:
+
+    Go to the position of shelf 6 in room 1.
+        Action: Goto
+        Pose: {'x': 12.5, 'y': 10.5}
+        Costs: 6.5 (Euclidean distance from (6.5, 12) to (12.5, 10.5))
+        Execution_mode: Autonomous
+        Entity: {'entity_type': 'shelf', 'entity_super_type': 'object', 'id': 6, 'parent_id': 1}
+
+Here is the optimal action set:
+
+json
+
+[
+    {
+        "type": "goto",
+        "pose": {"x": 12.5, "y": 10.5},
+        "costs": 6.5,
+        "execution_mode": "autonomous",
+        "entity": {"entity_type": "shelf", "entity_super_type": "object", "id": 6, "parent_id": 1}
+    }
+]
+
+

@@ -1,0 +1,5 @@
+go to the victim in room 1
+
+
+ [{'type': 'goto', 'pose': {'x': 6.5, 'y': 9}, 'costs': 0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 1, 'parent_id': 1}},
+{'type': 'goto', 'pose': {'x': 6.5, 'y': 13}, 'costs': 4.2426, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}]

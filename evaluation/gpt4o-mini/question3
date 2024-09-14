@@ -1,0 +1,4 @@
+go to table 2
+
+
+Result: [{'type': 'goto', 'pose': {'x': 0.5, 'y': 10.5}, 'costs': 6.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'table', 'entity_super_type': 'object', 'id': 2, 'parent_id': 1}}]

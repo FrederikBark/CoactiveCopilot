@@ -1,0 +1,21 @@
+
+communicate with the victim in room 3
+
+
+
+tasks: [
+  {'task': 'affordance', 'type': 'communicate', 'entity': {'type': 'victim', 'super_type': 'object', 'location': 'room 3'}},
+]
+
+constraints: [
+]
+
+
+
+actions: [
+  {'type': 'goto', 'pose': {'x': 9.0, 'y': 6.5}, 'costs': 6.041522979736328, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 1}},
+  {'type': 'traverse', 'pose': {'x': 11.0, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'Connection', 'entity_super_type': 'Connection', 'id': 0, 'parent_id': 3}},
+  {'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 10.404326438903809, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+  {'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+]
+

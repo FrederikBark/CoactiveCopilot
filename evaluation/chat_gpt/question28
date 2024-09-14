@@ -1,0 +1,228 @@
+To perform the task of communicating with both victims 20 and 21, the robot will need to:
+
+    Traverse from Room 1 to Room 3 using the open connection.
+    Navigate within Room 3 to reach victim 20.
+    Communicate with victim 20.
+    Traverse from Room 3 to Room 4 using Door 16.
+    Navigate within Room 4 to reach victim 21.
+    Communicate with victim 21.
+
+Here's the optimal set of actions:
+1. Traverse from Room 1 to Room 3 using the open connection:
+
+    Go to the open connection at (9, 6.5) in Room 1.
+
+json
+
+{
+  'type': 'goto', 
+  'pose': {'x': 9, 'y': 6.5}, 
+  'costs': 2.5, 
+  'execution_mode': 'autonomous', 
+  'entity': {
+    'entity_type': 'connection', 
+    'entity_super_type': 'object', 
+    'id': 0, 
+    'parent_id': 1
+  }
+}
+
+    Traverse the open connection to enter Room 3.
+
+json
+
+{
+  'type': 'traverse', 
+  'pose': {'x': 9, 'y': 6.5}, 
+  'costs': 0, 
+  'execution_mode': 'autonomous', 
+  'entity': {
+    'entity_type': 'connection', 
+    'entity_super_type': 'object', 
+    'id': 0, 
+    'parent_id': 3
+  }
+}
+
+2. Go to victim 20 in Room 3:
+
+    Go to victim 20 at (19.5, 12.5) in Room 3.
+
+json
+
+{
+  'type': 'goto', 
+  'pose': {'x': 19.5, 'y': 12.5}, 
+  'costs': 12.1037, 
+  'execution_mode': 'autonomous', 
+  'entity': {
+    'entity_type': 'victim', 
+    'entity_super_type': 'object', 
+    'id': 20, 
+    'parent_id': 3
+  }
+}
+
+3. Communicate with victim 20:
+
+    Communicate with victim 20.
+
+json
+
+{
+  'type': 'communicate', 
+  'pose': {'x': 19.5, 'y': 12.5}, 
+  'costs': 60, 
+  'execution_mode': 'teleop', 
+  'entity': {
+    'entity_type': 'victim', 
+    'entity_super_type': 'object', 
+    'id': 20, 
+    'parent_id': 3
+  }
+}
+
+4. Traverse from Room 3 to Room 4 using Door 16:
+
+    Go to Door 16 at (15.5, 7) in Room 3.
+
+json
+
+{
+  'type': 'goto', 
+  'pose': {'x': 15.5, 'y': 7}, 
+  'costs': 5.1478, 
+  'execution_mode': 'autonomous', 
+  'entity': {
+    'entity_type': 'door', 
+    'entity_super_type': 'object', 
+    'id': 16, 
+    'parent_id': 3
+  }
+}
+
+    Traverse Door 16 to enter Room 4.
+
+json
+
+{
+  'type': 'traverse', 
+  'pose': {'x': 15.5, 'y': 7}, 
+  'costs': 20, 
+  'execution_mode': 'teleop', 
+  'entity': {
+    'entity_type': 'door', 
+    'entity_super_type': 'object', 
+    'id': 16, 
+    'parent_id': 4
+  }
+}
+
+5. Go to victim 21 in Room 4:
+
+    Go to victim 21 at (14, 9) in Room 4.
+
+json
+
+{
+  'type': 'goto', 
+  'pose': {'x': 14, 'y': 9}, 
+  'costs': 1.8028, 
+  'execution_mode': 'autonomous', 
+  'entity': {
+    'entity_type': 'victim', 
+    'entity_super_type': 'object', 
+    'id': 21, 
+    'parent_id': 4
+  }
+}
+
+6. Communicate with victim 21:
+
+    Communicate with victim 21.
+
+json
+
+{
+  'type': 'communicate', 
+  'pose': {'x': 14, 'y': 9}, 
+  'costs': 60, 
+  'execution_mode': 'teleop', 
+  'entity': {
+    'entity_type': 'victim', 
+    'entity_super_type': 'object', 
+    'id': 21, 
+    'parent_id': 4
+  }
+}
+
+Full Sequence of Actions:
+
+json
+
+[
+  {
+    'type': 'goto', 
+    'pose': {'x': 9, 'y': 6.5}, 
+    'costs': 2.5, 
+    'execution_mode': 'autonomous', 
+    'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 1}
+  },
+  {
+    'type': 'traverse', 
+    'pose': {'x': 9, 'y': 6.5}, 
+    'costs': 0, 
+    'execution_mode': 'autonomous', 
+    'entity': {'entity_type': 'connection', 'entity_super_type': 'object', 'id': 0, 'parent_id': 3}
+  },
+  {
+    'type': 'goto', 
+    'pose': {'x': 19.5, 'y': 12.5}, 
+    'costs': 12.1037, 
+    'execution_mode': 'autonomous', 
+    'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}
+  },
+  {
+    'type': 'communicate', 
+    'pose': {'x': 19.5, 'y': 12.5}, 
+    'costs': 60, 
+    'execution_mode': 'teleop', 
+    'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}
+  },
+  {
+    'type': 'goto', 
+    'pose': {'x': 15.5, 'y': 7}, 
+    'costs': 5.1478, 
+    'execution_mode': 'autonomous', 
+    'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 3}
+  },
+  {
+    'type': 'traverse', 
+    'pose': {'x': 15.5, 'y': 7}, 
+    'costs': 20, 
+    'execution_mode': 'teleop', 
+    'entity': {'entity_type': 'door', 'entity_super_type': 'object', 'id': 16, 'parent_id': 4}
+  },
+  {
+    'type': 'goto', 
+    'pose': {'x': 14, 'y': 9}, 
+    'costs': 1.8028, 
+    'execution_mode': 'autonomous', 
+    'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}
+  },
+  {
+    'type': 'communicate', 
+    'pose': {'x': 14, 'y': 9}, 
+    'costs': 60, 
+    'execution_mode': 'teleop', 
+    'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 21, 'parent_id': 4}
+  }
+]
+
+Total cost:
+
+    Autonomous movement costs: 2.5 + 12.1037 + 5.1478 + 1.8028 = 21.5543.
+    Teleoperated communication costs: 60 + 60 = 120.
+    Door traversal (teleop): 20.
+
+Total cost: 21.5543 + 120 + 20 = 161.5543.

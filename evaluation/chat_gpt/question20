@@ -1,0 +1,47 @@
+To search a table in room 1 with the lowest combined cost, follow these steps:
+
+    Go to Table 3: The robot is starting at 6.5, 12 in Room 1. The table 3 is at 0.5, 8. The distance is calculated using Euclidean distance.
+
+    Distance = √((6.5 - 0.5)² + (12 - 8)²) = √(6² + 4²) = √36 + 16 = √52 ≈ 7.211
+
+    Action:
+        Type: goto
+        Pose: {'x': 0.5, 'y': 8}
+        Cost: 7.211
+        Execution_mode: autonomous
+        Entity: {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}
+
+    Search Table 3: The search action has the following costs:
+        Teleop: 80
+        Assisted: 60
+        Autonomous: 70
+
+    To minimize cost, use the assisted mode.
+
+    Action:
+        Type: search
+        Pose: {'x': 0.5, 'y': 8}
+        Cost: 60
+        Execution_mode: assisted
+        Entity: {'entity_type': 'table', 'entity_super_type': 'object', 'id': 3, 'parent_id': 1}
+
+Here is the optimal set of actions:
+
+json
+
+[
+  {
+    "type": "goto",
+    "pose": {"x": 0.5, "y": 8},
+    "costs": 7.211,
+    "execution_mode": "autonomous",
+    "entity": {"entity_type": "table", "entity_super_type": "object", "id": 3, "parent_id": 1}
+  },
+  {
+    "type": "search",
+    "pose": {"x": 0.5, "y": 8},
+    "costs": 60,
+    "execution_mode": "assisted",
+    "entity": {"entity_type": "table", "entity_super_type": "object", "id": 3, "parent_id": 1}
+  }
+]

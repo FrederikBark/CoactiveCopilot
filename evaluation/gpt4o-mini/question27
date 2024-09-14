@@ -1,0 +1,59 @@
+go to room 4, communicate with victim 20
+
+
+To go to room 4 and communicate with victim 20, the robot will need to traverse through room 1 to room 3 and then to room 4. Here are the optimal actions:
+
+1. Go to the open connection at (9, 6.5) to enter room 3.
+2. Traverse the open connection to room 3.
+3. Go to the center of room 3 at (16, 6).
+4. Go to the victim at (19.5, 12.5) in room 3.
+5. Communicate with victim 20.
+
+Here are the actions in detail:
+
+1. **Go to open connection (9, 6.5)**:
+   - Action: `goto`
+   - Pose: (9, 6.5)
+   - Costs: 2.5 (Euclidean distance from (6.5, 12) to (9, 6.5))
+   - Execution mode: `autonomous`
+   - Entity: Open connection (id not specified, parent_id: 1)
+
+2. **Traverse open connection**:
+   - Action: `traverse`
+   - Pose: (9, 6.5)
+   - Costs: 0.0 (traversing open connection)
+   - Execution mode: `autonomous`
+   - Entity: Open connection (id not specified, parent_id: 1)
+
+3. **Go to room 3 (16, 6)**:
+   - Action: `goto`
+   - Pose: (16, 6)
+   - Costs: 7.0 (Euclidean distance from (9, 6.5) to (16, 6))
+   - Execution mode: `autonomous`
+   - Entity: Room 3 (id: 3, parent_id: 3)
+
+4. **Go to victim 20 (19.5, 12.5)**:
+   - Action: `goto`
+   - Pose: (19.5, 12.5)
+   - Costs: 6.5 (Euclidean distance from (16, 6) to (19.5, 12.5))
+   - Execution mode: `autonomous`
+   - Entity: Victim 20 (id: 20, parent_id: 3)
+
+5. **Communicate with victim 20**:
+   - Action: `communicate`
+   - Pose: (19.5, 12.5)
+   - Costs: 60.0 (cost for communication)
+   - Execution mode: `teleop`
+   - Entity: Victim 20 (id: 20, parent_id: 3)
+
+Now, combining all these actions, we get:
+
+```json
+[
+    {'type': 'goto', 'pose': {'x': 9, 'y': 6.5}, 'costs': 2.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 'unknown', 'parent_id': 1}},
+    {'type': 'traverse', 'pose': {'x': 9, 'y': 6.5}, 'costs': 0.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'open_connection', 'entity_super_type': 'object', 'id': 'unknown', 'parent_id': 1}},
+    {'type': 'goto', 'pose': {'x': 16, 'y': 6}, 'costs': 7.0, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'room', 'entity_super_type': 'room', 'id': 3, 'parent_id': 3}},
+    {'type': 'goto', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 6.5, 'execution_mode': 'autonomous', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}},
+    {'type': 'communicate', 'pose': {'x': 19.5, 'y': 12.5}, 'costs': 60.0, 'execution_mode': 'teleop', 'entity': {'entity_type': 'victim', 'entity_super_type': 'object', 'id': 20, 'parent_id': 3}}
+]
+```
