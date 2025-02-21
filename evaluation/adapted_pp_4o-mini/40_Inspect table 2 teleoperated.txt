@@ -1,0 +1,11 @@
+def Inspect_table_2_teleoperated():
+
+```python
+def Inspect_table_2_teleoperated():
+  # 0: go to table 2
+  goto('table_2')
+  # 1: inspect table with id 2
+  inspect('table_2')
+  # 2: as task was performed successful return true
+  return True
+```

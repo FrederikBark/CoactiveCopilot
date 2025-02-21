@@ -1,0 +1,4 @@
+def go_to_the_person_in_room_4():
+
+# 0: return false as there is no person in room 4
+	return False

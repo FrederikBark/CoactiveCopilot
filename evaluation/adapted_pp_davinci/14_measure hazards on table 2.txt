@@ -1,0 +1,4 @@
+def measure_hazards_on_table_2():
+
+# 0: return false as there is no table with id 2 in the scene
+	return False

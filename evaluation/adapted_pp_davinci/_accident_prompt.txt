@@ -1,0 +1,101 @@
+from actions import goto <obj>, traverse <obj>, inspect <obj>, communicate <obj>, measure_hazard <obj>, search <obj>, communicate <obj>, open <obj>, move <obj>, use <obj>, carry <obj> look_at <obj>
+
+objects = ['open_connection_0', 'cupboard_10', 'container_6', 'container_22', 'shelf_24', 'container_5', 'room_2', 'cupboard_11', 'room_1', 'cupboard_12', 'cupboard_13', 'container_23', 'room_4', 'table_2', 'door_1', 'door_9', 'shelf_4', 'character', 'victim_21', 'shelf_17', 'door_16', 'table_15', 'table_3', 'victim_20', 'table_19', 'table_14', 'container_7', 'container_18', 'room_3', 'shelf_8']
+
+ edges = [{'from_id': 'room_1', 'to_id': 'room_2', 'relation_type': 'BETWEEN'}, {'from_id': 'character', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'door_1', 'to_id': 'room_1', 'relation_type': 'BETWEEN'}, {'from_id': 'door_9', 'to_id': 'room_1', 'relation_type': 'BETWEEN'}, {'from_id': 'door_9', 'to_id': 'room_2', 'relation_type': 'BETWEEN'}, {'from_id': 'door_16', 'to_id': 'room_3', 'relation_type': 'BETWEEN'}, {'from_id': 'door_16', 'to_id': 'room_4', 'relation_type': 'BETWEEN'}, {'from_id': 'open_connection_0', 'to_id': 'room_1', 'relation_type': 'BETWEEN'}, {'from_id': 'open_connection_0', 'to_id': 'room_3', 'relation_type': 'BETWEEN'}, {'from_id': '2', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'table_3', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'table_14', 'to_id': 'room_2', 'relation_type': 'INSIDE'}, {'from_id': 'table_15', 'to_id': 'room_2', 'relation_type': 'INSIDE'}, {'from_id': 'table_19', 'to_id': 'room_3', 'relation_type': 'INSIDE'}, {'from_id': 'shelf_4', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'shelf_8', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'shelf_17', 'to_id': 'room_3', 'relation_type': 'INSIDE'}, {'from_id': 'shelf_24', 'to_id': 'room_4', 'relation_type': 'INSIDE'}, {'from_id': 'victim_20', 'to_id': 'room_3', 'relation_type': 'INSIDE'}, {'from_id': 'victim_21', 'to_id': 'room_4', 'relation_type': 'INSIDE'}, {'from_id': 'container_5', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'container_6', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'container_7', 'to_id': 'room_1', 'relation_type': 'INSIDE'}, {'from_id': 'container_18', 'to_id': 'room_3', 'relation_type': 'INSIDE'}, {'from_id': 'container_22', 'to_id': 'room_4', 'relation_type': 'INSIDE'}, {'from_id': 'container_23', 'to_id': 'room_4', 'relation_type': 'INSIDE'}, {'from_id': 'cupboard_10', 'to_id': 'room_2', 'relation_type': 'INSIDE'}, {'from_id': 'cupboard_11', 'to_id': 'room_2', 'relation_type': 'INSIDE'}, {'from_id': 'cupboard_12', 'to_id': 'room_2', 'relation_type': 'INSIDE'}, {'from_id': 'cupboard_13', 'to_id': 'room_2', 'relation_type': 'INSIDE'}]
+
+def go_to_table_3():
+  # 0: go to the table with id 3
+  goto('table_3')
+  # 1: as task was performed successful return true
+  return True
+
+def go_to_table_in_room_1():
+  # 0: go to table in room 1
+  goto('table_2')
+  # 1: as task was performed successful return true
+  return True
+
+def inspect_table_2():
+  # 0: go to table 2
+  goto('table_2')
+  # 1: inspect table with id 2
+  inspect('table_2')
+  # 2: as task was performed successful return true
+  return True
+
+def traverse_door_9():
+  # 0: go to door with id 9
+  goto('door_9')
+  # 1: traverse door with id 9 to get to room 2
+  traverse('door_9')
+  # 2: as task was performed successful return true
+  return True
+
+def go_to_room_2():
+  # 0: go to door with id 9
+  goto('door_9')
+  # 1: traverse door with id 9 to get to room 2
+  traverse('door_9')
+  # 2: go to center of room with id 2 in autonomous mode
+  goto('room_2')
+  # 3: as task was performed successful return true
+  return True
+
+def go_to_room_3():
+  # 0: go to open connection with id 0
+  goto('open_connection_0')
+  # 1: traverse open_connection with id 0 to get to room 3
+  traverse('open_connection_0')
+  # 2: go to center of room with id 3 in autonomous mode
+  goto('room_3')
+  # 3: as task was performed successful return true
+  return True
+
+def search_cupboard_12():
+  # 0: go to door with id 9
+  goto('door_9')
+  # 1: traverse door with id 9 to get to room 2
+  traverse('door_9')
+  # 2: go to cupboard with id 12 in room 2
+  goto('cupboard_12')
+  # 3: search the cupboard with id 12
+  search('cupboard_12')
+  # 4: as task was performed successful return true
+  return True
+
+def traverse_door_9_and_go_to_cupboard_12():
+  # 0: go to door with id 9
+  goto('door_9')
+  # 1: traverse door with id 9 to get to room 2
+  traverse('door_9')
+  # 2: go to cupboard with id 12 in room 2
+  goto('cupboard_12')
+  # 3: as task was performed successful return true
+  return True
+
+def go_to_the_fire_extinguisher():
+  # 0: return false as there is no fire extinguisher in the scene
+  return False
+
+def go_to_box_4():
+  # 0: return false as there is no box with id 4 in the scene
+  return False
+
+def communicate_with_box_300():
+  # 0: return false as communication with a box is not possible
+  return False
+
+def go_to_victim_but_dont_traverse_door_9():
+  # 0: return false as victim can't be reached without traversing door 9
+  return False
+
+def go_to_the_table_but_dont_inspect_boxes():
+  # 0: go to position of table with id 2 in autonomous mode while not inspecting boxes
+  goto('table_2')
+  # 1: as task was performed successful return true
+  return True
+
+def go_to_the_victim_but_dont_traverse_connections():
+  # 0: return false as no box can be reached without traversing connections
+  return False

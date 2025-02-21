@@ -1,0 +1,4 @@
+def inspect_shelf_24_but_don’t_use_assisted_functions():
+
+# 0: return false as shelf 24 can't be inspected without using assisted functions
+	return False

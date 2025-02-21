@@ -1,0 +1,6 @@
+def search_a_table_in_room_1():
+
+# 0: search a table in room 1
+	search('table_2')
+	# 1: as task was performed successful return true
+	return True

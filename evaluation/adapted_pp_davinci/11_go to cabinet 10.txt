@@ -1,0 +1,4 @@
+def go_to_cabinet_10():
+
+# 0: return false as there is no cabinet with id 10 in the scene
+	return False

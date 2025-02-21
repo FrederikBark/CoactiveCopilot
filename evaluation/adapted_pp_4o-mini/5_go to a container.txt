@@ -1,0 +1,13 @@
+def go_to_a_container():
+
+```python
+def go_to_a_container():
+  # 0: go to door with id 9
+  goto('door_9')
+  # 1: traverse door with id 9 to get to room 2
+  traverse('door_9')
+  # 2: go to container with id 5 in room 2
+  goto('container_5')
+  # 3: as task was performed successful return true
+  return True
+```

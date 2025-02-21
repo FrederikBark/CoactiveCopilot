@@ -1,0 +1,15 @@
+def measure_hazards_on_table_2,_then_measure_hazards_on_table_19():
+
+```python
+def measure_hazards_on_table_2_then_measure_hazards_on_table_19():
+    # 0: go to table with id 2
+    goto('table_2')
+    # 1: measure hazards on table with id 2
+    measure_hazard('table_2')
+    # 2: go to table with id 19
+    goto('table_19')
+    # 3: measure hazards on table with id 19
+    measure_hazard('table_19')
+    # 4: as task was performed successful return true
+    return True
+```

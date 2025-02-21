@@ -1,0 +1,4 @@
+def communicate_with_victim_20_and_victim_21():
+
+# 0: return false as communication with victims is not possible
+	return False

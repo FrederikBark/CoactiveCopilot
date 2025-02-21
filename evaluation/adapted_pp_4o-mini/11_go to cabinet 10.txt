@@ -1,0 +1,9 @@
+def go_to_cabinet_10():
+
+```python
+def go_to_cabinet_10():
+  # 0: go to cupboard with id 10 in room 2
+  goto('cupboard_10')
+  # 1: as task was performed successful return true
+  return True
+```

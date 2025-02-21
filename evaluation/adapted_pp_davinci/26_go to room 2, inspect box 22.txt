@@ -1,0 +1,6 @@
+def go_to_room_2,_inspect_box_22():
+
+# 0: go to room 2
+	# 1: inspect box with id 22
+	# 2: as task was performed successful return true
+	return True

@@ -1,0 +1,11 @@
+def search_table_3_assisted():
+
+```python
+def search_table_3_assisted():
+  # 0: go to table with id 3
+  goto('table_3')
+  # 1: search the table with id 3
+  search('table_3')
+  # 2: as task was performed successful return true
+  return True
+```

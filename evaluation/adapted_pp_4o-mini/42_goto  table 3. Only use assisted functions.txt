@@ -1,0 +1,9 @@
+def goto__table_3._Only_use_assisted_functions():
+
+```python
+def goto_table_3_Only_use_assisted_functions():
+    # 0: go to the table with id 3
+    goto('table_3')
+    # 1: as task was performed successful return true
+    return True
+```

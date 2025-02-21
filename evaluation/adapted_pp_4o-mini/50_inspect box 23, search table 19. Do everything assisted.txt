@@ -1,0 +1,15 @@
+def inspect_box_23,_search_table_19._Do_everything_assisted():
+
+```python
+def inspect_box_23_search_table_19_Do_everything_assisted():
+    # 0: go to cupboard with id 23
+    goto('container_23')
+    # 1: inspect box with id 23
+    inspect('container_23')
+    # 2: go to table with id 19
+    goto('table_19')
+    # 3: search the table with id 19
+    search('table_19')
+    # 4: as task was performed successful return true
+    return True
+```

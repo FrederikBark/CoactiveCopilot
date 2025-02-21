@@ -1,0 +1,6 @@
+def go_to_room_4,_communicate_with_victim_20():
+
+# 0: go to room 4
+	# 1: communicate with victim 20
+	# 2: as task was performed successful return true
+	return True

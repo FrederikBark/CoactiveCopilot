@@ -1,0 +1,11 @@
+def communicate_with_shelf_4():
+
+```python
+def communicate_with_shelf_4():
+  # 0: go to shelf with id 4
+  goto('shelf_4')
+  # 1: communicate with shelf with id 4
+  communicate('shelf_4')
+  # 2: as task was performed successful return true
+  return True
+```

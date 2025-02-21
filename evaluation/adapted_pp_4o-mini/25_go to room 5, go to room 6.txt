@@ -1,0 +1,7 @@
+def go_to_room_5,_go_to_room_6():
+
+```python
+def go_to_room_5_go_to_room_6():
+  # 0: return false as there is no room with id 5 or 6 in the scene
+  return False
+```

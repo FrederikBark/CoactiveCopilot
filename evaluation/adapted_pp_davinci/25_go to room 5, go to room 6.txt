@@ -1,0 +1,6 @@
+def go_to_room_5,_go_to_room_6():
+
+# 0: go to room 5
+	# 1: go to room 6
+	# 2: as task was performed successful return true
+	return True
