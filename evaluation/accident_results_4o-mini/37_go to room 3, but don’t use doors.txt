@@ -1,0 +1,13 @@
+def go_to_room_3,_but_don’t_use_doors():
+
+```python
+def go_to_room_3_but_dont_use_doors():
+  # 0: go to open connection with id 0
+  goto('open_connection_0')
+  # 1: traverse open_connection with id 0 to get to room 3
+  traverse('open_connection_0')
+  # 2: go to center of room with id 3 in autonomous mode
+  goto('room_3')
+  # 3: as task was performed successful return true
+  return True
+```

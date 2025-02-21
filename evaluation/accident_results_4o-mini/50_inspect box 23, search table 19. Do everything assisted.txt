@@ -1,0 +1,17 @@
+def inspect_box_23,_search_table_19._Do_everything_assisted():
+
+```python
+def inspect_box_23_search_table_19_Do_everything_assisted():
+    # 0: go to door with id 16
+    goto('door_16')
+    # 1: traverse door with id 16 to get to room 3
+    traverse('door_16')
+    # 2: go to table with id 19 in room 3
+    goto('table_19')
+    # 3: inspect box with id 23
+    inspect('container_23')
+    # 4: search the table with id 19
+    search('table_19')
+    # 5: as task was performed successful return true
+    return True
+```

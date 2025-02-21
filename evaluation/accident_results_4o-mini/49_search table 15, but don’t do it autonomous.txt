@@ -1,0 +1,11 @@
+def search_table_15,_but_don’t_do_it_autonomous():
+
+```python
+def search_table_15_but_dont_do_it_autonomous():
+  # 0: go to table with id 15
+  goto('table_15')
+  # 1: search the table with id 15
+  search('table_15')
+  # 2: as task was performed successful return true
+  return True
+```

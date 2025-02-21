@@ -1,0 +1,15 @@
+def inspect_box_5_without_autonomous,_assisted_or_teleoperated_abilities():
+
+```python
+def inspect_box_5_without_autonomous_assisted_or_teleoperated_abilities():
+    # 0: go to door with id 9
+    goto('door_9')
+    # 1: traverse door with id 9 to get to room 2
+    traverse('door_9')
+    # 2: go to cupboard with id 10 in room 2
+    goto('cupboard_10')
+    # 3: inspect the box with id 5
+    inspect('container_5')
+    # 4: as task was performed successful return true
+    return True
+```

@@ -1,0 +1,15 @@
+def search_the_shelf_in_room_4():
+
+```python
+def search_the_shelf_in_room_4():
+  # 0: go to door with id 16
+  goto('door_16')
+  # 1: traverse door with id 16 to get to room 4
+  traverse('door_16')
+  # 2: go to shelf in room 4
+  goto('shelf_24')
+  # 3: search the shelf in room 4
+  search('shelf_24')
+  # 4: as task was performed successful return true
+  return True
+```

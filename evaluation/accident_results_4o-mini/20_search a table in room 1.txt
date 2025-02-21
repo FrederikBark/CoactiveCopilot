@@ -1,0 +1,11 @@
+def search_a_table_in_room_1():
+
+```python
+def search_a_table_in_room_1():
+  # 0: go to table 3 in room 1
+  goto('table_3')
+  # 1: search the table with id 3
+  search('table_3')
+  # 2: as task was performed successful return true
+  return True
+```
