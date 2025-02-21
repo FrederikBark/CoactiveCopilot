@@ -1,0 +1,10 @@
+def go_to_room_2,_go_to_room_3,_go_to_room_4():
+
+# 0: go to room 2
+	goto('room_2')
+	# 1: go to room 3
+	goto('room_3')
+	# 2: go to room 4
+	goto('room_4')
+	# 3: as task was performed successful return true
+	return True

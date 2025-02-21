@@ -1,6 +1,0 @@
-def search_table_3_assisted():
-
-# 0: return false as there is no table with id 3 in the scene
-	return False
-
-	def

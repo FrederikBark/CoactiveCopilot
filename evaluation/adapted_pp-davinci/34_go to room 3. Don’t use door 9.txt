@@ -1,0 +1,4 @@
+def go_to_room_3._Don’t_use_door_9():
+
+# 0: return false as no victim can be reached without traversing door 9
+	return False

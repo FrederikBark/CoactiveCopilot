@@ -1,4 +1,0 @@
-def inspect_box_5_without_autonomous,_assisted_or_teleoperated_abilities():
-
-# 0: return false as no box can be reached without autonomous, assisted or teleoperated abilities
-	return False

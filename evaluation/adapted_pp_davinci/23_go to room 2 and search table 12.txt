@@ -1,6 +1,0 @@
-def go_to_room_2_and_search_table_12():
-
-# 0: go to room 2
-	# 1: search table with id 12 in room 2
-	# 2: as task was performed successful return true
-	return True

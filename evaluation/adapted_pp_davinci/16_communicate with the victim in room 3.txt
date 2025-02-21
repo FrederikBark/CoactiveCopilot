@@ -1,4 +1,0 @@
-def communicate_with_the_victim_in_room_3():
-
-# 0: return false as victim can't be reached without traversing connections
-	return False

@@ -1,6 +1,0 @@
-def inspect_shelf_4():
-
-# 0: go to shelf with id 4
-	# 1: inspect shelf with id 4
-	# 2: as task was performed successful return true
-	return True

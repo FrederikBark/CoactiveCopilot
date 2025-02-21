@@ -1,0 +1,4 @@
+def go_to_room_3,_but_don’t_use_open_connection_0():
+
+# 0: return false as no victim can be reached without using open connection 0
+	return False

@@ -1,0 +1,8 @@
+def go_to_room_2_and_search_table_12():
+
+# 0: go to door with id 9
+	# 1: traverse door with id 9 to get to room 2
+	# 2: go to table with id 12 in room 2
+	# 3: search the table with id 12
+	# 4: as task was performed successful return true
+	return True

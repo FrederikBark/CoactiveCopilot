@@ -1,6 +1,0 @@
-def go_to_room_5():
-
-# 0: go to room 5
-	goto('room_5')
-	# 1: as task was performed successful return true
-	return True

@@ -1,4 +1,0 @@
-def go_to_room_2,_but_don’t_use_door_9():
-
-# 0: return false as no box can be reached without traversing connections
-	return False

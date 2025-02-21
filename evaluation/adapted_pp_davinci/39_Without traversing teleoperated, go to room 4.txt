@@ -1,4 +1,0 @@
-def Without_traversing_teleoperated,_go_to_room_4():
-
-# 0: return false as no box can be reached without traversing connections
-	return False

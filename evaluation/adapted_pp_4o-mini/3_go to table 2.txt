@@ -1,9 +1,0 @@
-def go_to_table_2():
-
-```python
-def go_to_table_2():
-  # 0: go to table with id 2
-  goto('table_2')
-  # 1: as task was performed successful return true
-  return True
-```

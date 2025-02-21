@@ -1,7 +1,0 @@
-def go_to_the_chair_in_room_2():
-
-```python
-def go_to_the_chair_in_room_2():
-  # 0: return false as there is no chair in room 2
-  return False
-```

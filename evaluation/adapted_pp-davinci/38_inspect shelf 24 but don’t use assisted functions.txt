@@ -1,0 +1,7 @@
+def inspect_shelf_24_but_don’t_use_assisted_functions():
+
+# 0: return false as shelf 24 can't be inspected without using assisted functions
+	# 1: inspect shelf with id 24
+	inspect('shelf_24')
+	# 2: as task was performed successful return true
+	return True

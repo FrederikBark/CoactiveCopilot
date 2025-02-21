@@ -1,6 +1,0 @@
-def search_table_15,_but_don’t_do_it_autonomous():
-
-# 0: search table with id 15
-	search('table_15')
-	# 1: as task was performed successful return true
-	return True

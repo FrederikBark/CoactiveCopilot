@@ -1,4 +1,0 @@
-def go_to_the_victim_in_room_1():
-
-# 0: return false as victim can't be reached without traversing door 9
-	return False

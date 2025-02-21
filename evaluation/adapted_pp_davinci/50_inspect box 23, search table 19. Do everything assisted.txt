@@ -1,4 +1,0 @@
-def inspect_box_23,_search_table_19._Do_everything_assisted():
-
-# 0: return false as no box can be reached without traversing connections
-	return False

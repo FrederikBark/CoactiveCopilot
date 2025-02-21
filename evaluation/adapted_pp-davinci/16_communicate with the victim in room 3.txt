@@ -1,0 +1,4 @@
+def communicate_with_the_victim_in_room_3():
+
+# 0: return false as communication with a victim is not possible
+	return False

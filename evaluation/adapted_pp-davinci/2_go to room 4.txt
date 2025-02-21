@@ -1,0 +1,10 @@
+def go_to_room_4():
+
+# 0: go to door with id 9
+	# 1: traverse door with id 9 to get to room 2
+	# 2: go to room with id 4 in autonomous mode
+	# 3: as task was performed successful return true
+	goto('door_9')
+	traverse('door_9')
+	goto('room_4')
+	return True
