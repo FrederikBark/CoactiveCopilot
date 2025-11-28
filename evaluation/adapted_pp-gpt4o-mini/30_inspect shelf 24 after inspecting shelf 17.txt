@@ -1,0 +1,19 @@
+def inspect_shelf_24_after_inspecting_shelf_17():
+
+```python
+def inspect_shelf_24_after_inspecting_shelf_17():
+  # 0: go to open connection with id 0
+  goto('open_connection_0')
+  # 1: traverse open_connection with id 0 to get to room 3
+  traverse('open_connection_0')
+  # 2: go to shelf with id 17 in room 3
+  goto('shelf_17')
+  # 3: inspect shelf with id 17
+  inspect('shelf_17')
+  # 4: go to shelf with id 24 in room 4
+  goto('shelf_24')
+  # 5: inspect shelf with id 24
+  inspect('shelf_24')
+  # 6: as task was performed successful return true
+  return True
+```

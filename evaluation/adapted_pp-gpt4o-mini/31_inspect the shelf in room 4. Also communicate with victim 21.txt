@@ -1,0 +1,19 @@
+def inspect_the_shelf_in_room_4._Also_communicate_with_victim_21():
+
+```python
+def inspect_the_shelf_in_room_4_and_communicate_with_victim_21():
+  # 0: go to door with id 16
+  goto('door_16')
+  # 1: traverse door with id 16 to get to room 4
+  traverse('door_16')
+  # 2: go to shelf in room 4
+  goto('shelf_24')
+  # 3: inspect the shelf in room 4
+  inspect('shelf_24')
+  # 4: go to victim with id 21
+  goto('victim_21')
+  # 5: communicate with victim with id 21
+  communicate('victim_21')
+  # 6: as task was performed successful return true
+  return True
+```

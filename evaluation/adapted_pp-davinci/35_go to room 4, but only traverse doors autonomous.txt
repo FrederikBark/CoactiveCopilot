@@ -1,0 +1,6 @@
+def go_to_room_4,_but_only_traverse_doors_autonomous():
+
+# 0: go to room 4 in autonomous mode
+	goto('room_4')
+	# 1: as task was performed successful return true
+	return True

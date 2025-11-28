@@ -1,0 +1,11 @@
+def inspect_box_6_without_traversing_doors():
+
+```python
+def inspect_box_6_without_traversing_doors():
+  # 0: go to container with id 6 in room 1
+  goto('container_6')
+  # 1: inspect box with id 6
+  inspect('container_6')
+  # 2: as task was performed successful return true
+  return True
+```

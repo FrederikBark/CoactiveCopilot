@@ -1,0 +1,4 @@
+def go_to_the_shelf_in_room_3():
+
+# 0: return false as there is no shelf in room 3
+	return False

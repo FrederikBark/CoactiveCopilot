@@ -1,0 +1,4 @@
+def search_the_shelf_in_room_4():
+
+# 0: return false as there is no shelf in room 4
+	return False

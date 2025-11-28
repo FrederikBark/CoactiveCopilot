@@ -1,0 +1,4 @@
+def search_door_9():
+
+# 0: return false as there is no door with id 9 in the scene
+	return False

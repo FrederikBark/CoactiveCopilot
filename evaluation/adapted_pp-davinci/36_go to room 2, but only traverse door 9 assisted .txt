@@ -1,0 +1,8 @@
+def go_to_room_2,_but_only_traverse_door_9_assisted_():
+
+# 0: go to room 2, but only traverse door 9 assisted
+	# 1: goto('door_9')
+	# 2: traverse('door_9')
+	# 3: goto('room_2')
+	# 4: as task was performed successful return true
+	return True

@@ -1,0 +1,6 @@
+def inspect_shelf_24_after_inspecting_shelf_17():
+
+# 0: inspect shelf 24 after inspecting shelf 17
+	inspect('shelf_24')
+	# 1: as task was performed successful return true
+	return True

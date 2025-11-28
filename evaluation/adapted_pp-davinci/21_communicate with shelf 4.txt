@@ -1,0 +1,4 @@
+def communicate_with_shelf_4():
+
+# 0: return false as communication with a shelf is not possible
+	return False

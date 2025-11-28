@@ -1,0 +1,19 @@
+def communicate_with_victim_20_and_victim_21():
+
+```python
+def communicate_with_victim_20_and_victim_21():
+  # 0: go to door with id 16
+  goto('door_16')
+  # 1: traverse door with id 16 to get to room 4
+  traverse('door_16')
+  # 2: go to victim with id 21 in room 4
+  goto('victim_21')
+  # 3: communicate with victim 21
+  communicate('victim_21')
+  # 4: go to victim with id 20 in room 3
+  goto('room_3')
+  # 5: communicate with victim 20
+  communicate('victim_20')
+  # 6: as task was performed successful return true
+  return True
+```

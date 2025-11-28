@@ -1,0 +1,4 @@
+def measure_hazards_on_table_2():
+
+# 0: return false as there are no hazards on table 2
+	return False

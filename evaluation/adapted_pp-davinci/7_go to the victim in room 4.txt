@@ -1,0 +1,4 @@
+def go_to_the_victim_in_room_4():
+
+# 0: return false as there is no victim in room 4
+	return False

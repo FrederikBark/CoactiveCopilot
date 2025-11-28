@@ -1,0 +1,4 @@
+def inspect_the_shelf_in_room_4._Also_communicate_with_victim_21():
+
+# 0: return false as there is no shelf in room 4
+	return False

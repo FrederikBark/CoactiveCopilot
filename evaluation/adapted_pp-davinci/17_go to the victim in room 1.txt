@@ -1,0 +1,4 @@
+def go_to_the_victim_in_room_1():
+
+# 0: return false as no victim can be reached without traversing connections
+	return False

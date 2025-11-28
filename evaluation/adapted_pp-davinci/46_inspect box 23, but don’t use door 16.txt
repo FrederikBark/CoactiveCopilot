@@ -1,0 +1,4 @@
+def inspect_box_23,_but_don’t_use_door_16():
+
+# 0: return false as no box can be inspected without traversing door 16
+	return False

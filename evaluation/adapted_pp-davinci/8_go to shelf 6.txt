@@ -1,0 +1,4 @@
+def go_to_shelf_6():
+
+# 0: return false as there is no shelf with id 6 in the scene
+	return False

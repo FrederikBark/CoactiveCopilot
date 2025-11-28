@@ -1,0 +1,4 @@
+def Without_traversing_teleoperated,_go_to_room_4():
+
+# 0: return false as no victim can be reached without traversing connections
+	return False

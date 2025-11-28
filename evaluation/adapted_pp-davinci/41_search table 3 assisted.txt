@@ -1,0 +1,6 @@
+def search_table_3_assisted():
+
+# 0: search table with id 3
+	search('table_3')
+	# 1: as task was performed successful return true
+	return True

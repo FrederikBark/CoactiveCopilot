@@ -1,0 +1,4 @@
+def search_table_14_without_traversing_doors():
+
+# 0: return false as no table can be searched without traversing doors
+	return False

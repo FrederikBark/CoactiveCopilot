@@ -1,0 +1,6 @@
+def Inspect_table_2_teleoperated():
+
+# 0: go to table with id 2
+	# 1: inspect table with id 2
+	# 2: as task was performed successful return true
+	return True

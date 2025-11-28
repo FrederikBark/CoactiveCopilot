@@ -1,0 +1,9 @@
+def go_to_a_container():
+
+```python
+def go_to_a_container():
+  # 0: go to the container with id 5 in room 1
+  goto('container_5')
+  # 1: as task was performed successful return true
+  return True
+```

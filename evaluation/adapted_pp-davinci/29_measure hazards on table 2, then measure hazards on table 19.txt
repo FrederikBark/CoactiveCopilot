@@ -1,0 +1,8 @@
+def measure_hazards_on_table_2,_then_measure_hazards_on_table_19():
+
+# 0: measure hazards on table 2
+	measure_hazard('table_2')
+	# 1: measure hazards on table 19
+	measure_hazard('table_19')
+	# 2: as task was performed successful return true
+	return True

@@ -1,0 +1,4 @@
+def clean_table_19():
+
+# 0: return false as there is no table with id 19 in the scene
+	return False

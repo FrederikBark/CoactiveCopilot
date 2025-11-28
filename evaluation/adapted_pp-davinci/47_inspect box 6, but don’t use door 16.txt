@@ -1,0 +1,6 @@
+def inspect_box_6,_but_don’t_use_door_16():
+
+# 0: inspect box with id 6
+	inspect('box_6')
+	# 1: as task was performed successful return true
+	return True

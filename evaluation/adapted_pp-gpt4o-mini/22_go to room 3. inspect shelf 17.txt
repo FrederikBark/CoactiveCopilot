@@ -1,0 +1,15 @@
+def go_to_room_3._inspect_shelf_17():
+
+```python
+def go_to_room_3_and_inspect_shelf_17():
+  # 0: go to open connection with id 0
+  goto('open_connection_0')
+  # 1: traverse open_connection with id 0 to get to room 3
+  traverse('open_connection_0')
+  # 2: go to shelf with id 17 in room 3
+  goto('shelf_17')
+  # 3: inspect shelf with id 17
+  inspect('shelf_17')
+  # 4: as task was performed successful return true
+  return True
+```

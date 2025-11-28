@@ -1,0 +1,11 @@
+def search_table_14_without_traversing_doors():
+
+```python
+def search_table_14_without_traversing_doors():
+  # 0: go to table with id 14 in room 2
+  goto('table_14')
+  # 1: search the table with id 14
+  search('table_14')
+  # 2: as task was performed successful return true
+  return True
+```

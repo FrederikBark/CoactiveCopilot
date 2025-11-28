@@ -1,0 +1,11 @@
+def search_door_9():
+
+```python
+def search_door_9():
+  # 0: go to door with id 9
+  goto('door_9')
+  # 1: inspect door with id 9
+  inspect('door_9')
+  # 2: as task was performed successful return true
+  return True
+```

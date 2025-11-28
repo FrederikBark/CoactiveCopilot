@@ -1,0 +1,13 @@
+def goto__table_3._Only_use_assisted_functions():
+
+```python
+def goto_table_3_Only_use_assisted_functions():
+    # 0: go to door with id 16
+    goto('door_16')
+    # 1: traverse door with id 16 to get to room 3
+    traverse('door_16')
+    # 2: go to table with id 19 in room 3
+    goto('table_19')
+    # 3: as task was performed successful return true
+    return True
+```

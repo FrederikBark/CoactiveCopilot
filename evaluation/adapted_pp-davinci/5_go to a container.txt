@@ -1,0 +1,4 @@
+def go_to_a_container():
+
+# 0: return false as there is no container in the scene
+	return False

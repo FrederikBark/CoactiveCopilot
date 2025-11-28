@@ -1,0 +1,7 @@
+def go_to_room_3._inspect_shelf_17():
+
+# 0: go to room 3
+	# 1: go to shelf with id 17 in room 3
+	# 2: inspect shelf with id 17
+	# 3: as task was performed successful return true
+	return True
